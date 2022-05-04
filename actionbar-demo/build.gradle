@@ -5,9 +5,11 @@ fir {
     changeLog ''
 }
 dependencies {
+    api fileTree(include: ['*.jar','*.aar'], dir: 'libs')
+
     implementation 'androidx.fragment:fragment:1.2.5'
     implementation 'com.google.android.material:material:1.2.0'
-    implementation project(':actionbar')
+//    implementation project(':actionbar')
     //leak canary
     debugImplementation 'com.squareup.leakcanary:leakcanary-android:2.2'
 }
