@@ -34,13 +34,14 @@ public class ThemeActivity extends ActionBarActivity {
         Log.d("MainActivity", "light==" + light);
         if (light) {
             setTheme(R.style.AppTheme1);
-            setStatusBarTextColor(true);
+//            setStatusBarTextColor(true);
         } else {
             setTheme(R.style.AppTheme2);
-            setStatusBarTextColor(false);
+//            setStatusBarTextColor(false);
         }
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_theme);
+        this.setStatusBarTintColor(getResources().getColor(R.color.green));
         this.setActionbarShadow(true);
         this.getCustomActionBar().displayUpIndicator();
         this.setTitle(this.getClass().getSimpleName().replace("Activity", ""));

@@ -16,6 +16,7 @@ import androidx.annotation.AttrRes;
 import androidx.annotation.ColorInt;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.graphics.ColorUtils;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
@@ -118,6 +119,28 @@ public class ActionBarActivity extends AppCompatActivity {
         getWindow().clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
         getWindow().setStatusBarColor(color);
+
+        //设置状态栏颜色后，需要同步设置状态栏文字颜色
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            View decorView = getWindow().getDecorView();
+            int vis = decorView.getSystemUiVisibility();
+            if (isLightColor(color)) {
+                vis |= View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR; //black
+            } else {
+                vis &= ~View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR; //white
+            }
+            decorView.setSystemUiVisibility(vis);
+        }
+    }
+
+    /**
+     * calculate the color is light or dark.
+     *
+     * @param color
+     * @return
+     */
+    private boolean isLightColor(@ColorInt int color) {
+        return ColorUtils.calculateLuminance(color) >= 0.5;
     }
 
     @RequiresApi(api = Build.VERSION_CODES.ICE_CREAM_SANDWICH)
@@ -183,10 +206,11 @@ public class ActionBarActivity extends AppCompatActivity {
     }
 
     /**
-     * 设置状态栏字体图标颜色
+     * 设置状态栏字体图标颜色 (方法合并至setStatusBarTintColor(),后续版本中移除)
      *
      * @param black 是否黑色
      */
+    @Deprecated
     public void setStatusBarTextColor(boolean black) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             int systemUiVisibility = getWindow().getDecorView().getSystemUiVisibility();
