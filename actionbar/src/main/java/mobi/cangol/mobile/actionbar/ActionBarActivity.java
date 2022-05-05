@@ -24,24 +24,12 @@ import mobi.cangol.mobile.actionbar.view.SearchView;
 
 public class ActionBarActivity extends AppCompatActivity {
     private ActionBarActivityDelegate mDelegate;
-    private boolean useSystemBarTintLollipop = false;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mDelegate = new ActionBarActivityDelegate(this);
         mDelegate.onCreate(savedInstanceState);
         setStatusBarTintColor(getThemeAttrColor(R.attr.actionbar_background));
-    }
-
-    /**
-     * 在Lollipop是否使用澄侵式系统栏(状态栏和导航栏)
-     *
-     * @param useSystemBarTintLollipop Lollipop是否使用澄侵式系统栏
-     */
-    public void setUseSystemBarTintLollipop(boolean useSystemBarTintLollipop) {
-        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.M) {
-            this.useSystemBarTintLollipop = useSystemBarTintLollipop;
-        }
     }
 
     public TypedValue getAttrTypedValue(@AttrRes int attr) {
@@ -127,17 +115,9 @@ public class ActionBarActivity extends AppCompatActivity {
      * @param color 颜色
      */
     public void setStatusBarTintColor(int color) {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            getWindow().clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
-            getWindow().addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
-            getWindow().setStatusBarColor(color);
-        } else {
-            if (useSystemBarTintLollipop) {
-                getWindow().clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
-                getWindow().addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
-                getWindow().setStatusBarColor(color);
-            }
-        }
+        getWindow().clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+        getWindow().setStatusBarColor(color);
     }
 
     @RequiresApi(api = Build.VERSION_CODES.ICE_CREAM_SANDWICH)
@@ -197,17 +177,9 @@ public class ActionBarActivity extends AppCompatActivity {
      * @param color 颜色
      */
     public void setNavigationBarTintColor(int color) {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            getWindow().clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);
-            getWindow().addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
-            getWindow().setNavigationBarColor(color);
-        } else {
-            if (useSystemBarTintLollipop) {
-                getWindow().clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);
-                getWindow().addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
-                getWindow().setNavigationBarColor(color);
-            }
-        }
+        getWindow().clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+        getWindow().setNavigationBarColor(color);
     }
 
     /**

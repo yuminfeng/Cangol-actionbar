@@ -19,20 +19,20 @@ import java.util.List;
 import mobi.cangol.mobile.actionbar.ActionBarActivity;
 
 @SuppressLint("ResourceAsColor")
-public class MainActivity extends ActionBarActivity{
+public class MainActivity extends ActionBarActivity {
     private ListView mListView;
-    private List<Class<? extends Activity>> activities=new ArrayList<>();
-    private static boolean light=true;
+    private List<Class<? extends Activity>> activities = new ArrayList<>();
+    private static boolean light = true;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
-        Log.d("MainActivity","light=="+light);
-        if(light){
+        Log.d("MainActivity", "light==" + light);
+        if (light) {
             setTheme(R.style.AppTheme1);
             //setStatusBarTextColor(true);
-        }else {
+        } else {
             setTheme(R.style.AppTheme2);
             //setStatusBarTextColor(false);
-            //setUseSystemBarTintLollipop(true);
         }
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
@@ -40,7 +40,7 @@ public class MainActivity extends ActionBarActivity{
         this.setStatusBarTintColor(getResources().getColor(R.color.red));
         this.setWindowBackground(R.drawable.ic_bg);
         this.getCustomActionBar().setDisplayShowHomeEnabled(true);
-        this.setActionbarShadow(true,8);
+        this.setActionbarShadow(true, 8);
         this.getCustomActionBar().setBackgroundResource(R.color.red);
 
         activities.add(SearchViewActivity.class);
@@ -56,7 +56,7 @@ public class MainActivity extends ActionBarActivity{
         activities.add(TransparentActivity.class);
         activities.add(TransparentNativeActivity.class);
         activities.add(TransparentInputActivity.class);
-        mListView= (ListView) this.findViewById(R.id.listView);
+        mListView = (ListView) this.findViewById(R.id.listView);
         mListView.setAdapter(new BaseAdapter() {
             @Override
             public int getCount() {
@@ -85,9 +85,10 @@ public class MainActivity extends ActionBarActivity{
                     holder.text = (TextView) convertView.findViewById(R.id.textView);
                     convertView.setTag(holder);
                 }
-                holder.text.setText(item.getSimpleName().replace("Activity",""));
+                holder.text.setText(item.getSimpleName().replace("Activity", ""));
                 return convertView;
             }
+
             class ViewHolder {
                 TextView text;
             }
@@ -95,8 +96,8 @@ public class MainActivity extends ActionBarActivity{
         mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Class clazz= (Class) parent.getItemAtPosition(position);
-                startActivity(new Intent(MainActivity.this,clazz));
+                Class clazz = (Class) parent.getItemAtPosition(position);
+                startActivity(new Intent(MainActivity.this, clazz));
             }
         });
 
