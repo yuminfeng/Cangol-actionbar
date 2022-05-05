@@ -1,8 +1,9 @@
 package mobi.cangol.mobile.actionbar;
 
-import androidx.annotation.IdRes;
 import android.view.View;
 import android.view.View.OnClickListener;
+
+import androidx.annotation.IdRes;
 
 import java.util.List;
 

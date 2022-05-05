@@ -2,12 +2,9 @@ package mobi.cangol.mobile.actionbar.demo;
 
 import android.os.Build;
 import android.os.Bundle;
-import androidx.annotation.RequiresApi;
-import androidx.core.content.ContextCompat;
-import androidx.appcompat.widget.FitWindowsFrameLayout;
-import androidx.appcompat.widget.FitWindowsLinearLayout;
-import androidx.appcompat.widget.Toolbar;
 import android.view.View;
+
+import androidx.annotation.RequiresApi;
 
 import mobi.cangol.mobile.actionbar.ActionBarActivity;
 
