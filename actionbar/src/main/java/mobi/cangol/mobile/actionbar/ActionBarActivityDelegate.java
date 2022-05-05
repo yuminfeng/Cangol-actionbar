@@ -112,14 +112,14 @@ public class ActionBarActivityDelegate {
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     private void attachToActivity(Activity activity, View layout) {
         // get the window background
-        int background=0;
-        int type=0;
+        int background = 0;
+        int type = 0;
         {
-            TypedArray a= activity.getTheme().obtainStyledAttributes(new int[]{android.R.attr.windowBackground});
-            type=a.getType(0);
-            if(type==TypedValue.TYPE_INT_COLOR_RGB8){
+            TypedArray a = activity.getTheme().obtainStyledAttributes(new int[]{android.R.attr.windowBackground});
+            type = a.getType(0);
+            if (type == TypedValue.TYPE_INT_COLOR_RGB8) {
                 background = a.getColor(0, 0);
-            }else {
+            } else {
                 background = a.getResourceId(0, 0);
             }
             a.recycle();
@@ -127,10 +127,10 @@ public class ActionBarActivityDelegate {
 
         ViewGroup decor = (ViewGroup) activity.getWindow().getDecorView();
         ViewGroup decorChild = (ViewGroup) decor.getChildAt(0);
-        if(decor.getBackground()==null){
-            if(type==TypedValue.TYPE_INT_COLOR_RGB8){
+        if (decor.getBackground() == null) {
+            if (type == TypedValue.TYPE_INT_COLOR_RGB8) {
                 decor.setBackgroundColor(background);
-            }else{
+            } else {
                 decor.setBackgroundResource(background);
             }
         }
@@ -139,11 +139,11 @@ public class ActionBarActivityDelegate {
             decorChild.setBackgroundDrawable(null);
         }
         decor.removeView(decorChild);
-        decor.addView(layout, 0,decorChild.getLayoutParams());
+        decor.addView(layout, 0, decorChild.getLayoutParams());
 
         decorChild.setFitsSystemWindows(false);
-        View view=decorChild.findViewById(android.R.id.content);
-        ViewGroup parent= (ViewGroup) view.getParent();
+        View view = decorChild.findViewById(android.R.id.content);
+        ViewGroup parent = (ViewGroup) view.getParent();
         parent.removeView(view);
         setContentView(view);
     }
@@ -236,25 +236,17 @@ public class ActionBarActivityDelegate {
 
     public void setActionbarShadow(boolean shadow) {
         if (shadow) {
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                mContainerView.findViewById(R.id.actionbar_view).setElevation(1.5f * mActivity.getResources().getDisplayMetrics().density);
-            }
+            mContainerView.findViewById(R.id.actionbar_view).setElevation(1.5f * mActivity.getResources().getDisplayMetrics().density);
         } else {
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                mContainerView.findViewById(R.id.actionbar_view).setElevation(0);
-            }
+            mContainerView.findViewById(R.id.actionbar_view).setElevation(0);
         }
     }
 
     public void setActionbarShadow(boolean shadow, float elevation) {
         if (shadow) {
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                mContainerView.findViewById(R.id.actionbar_view).setElevation(elevation * mActivity.getResources().getDisplayMetrics().density);
-            }
+            mContainerView.findViewById(R.id.actionbar_view).setElevation(elevation * mActivity.getResources().getDisplayMetrics().density);
         } else {
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                mContainerView.findViewById(R.id.actionbar_view).setElevation(elevation);
-            }
+            mContainerView.findViewById(R.id.actionbar_view).setElevation(elevation);
         }
     }
 

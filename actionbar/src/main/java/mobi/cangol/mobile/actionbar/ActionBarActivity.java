@@ -24,27 +24,22 @@ import mobi.cangol.mobile.actionbar.view.SearchView;
 
 public class ActionBarActivity extends AppCompatActivity {
     private ActionBarActivityDelegate mDelegate;
-    private SystemBarTintManager mTintManager;
     private boolean useSystemBarTintLollipop = false;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mDelegate = new ActionBarActivityDelegate(this);
         mDelegate.onCreate(savedInstanceState);
-        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP) {
-            mTintManager = new SystemBarTintManager(this);
-        }
         setStatusBarTintColor(getThemeAttrColor(R.attr.actionbar_background));
     }
 
     /**
      * 在Lollipop是否使用澄侵式系统栏(状态栏和导航栏)
      *
-     * @param useSystemBarTintLollipop  Lollipop是否使用澄侵式系统栏
+     * @param useSystemBarTintLollipop Lollipop是否使用澄侵式系统栏
      */
     public void setUseSystemBarTintLollipop(boolean useSystemBarTintLollipop) {
-        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.M &&
-                Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.M) {
             this.useSystemBarTintLollipop = useSystemBarTintLollipop;
         }
     }
@@ -136,15 +131,12 @@ public class ActionBarActivity extends AppCompatActivity {
             getWindow().clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
             getWindow().addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
             getWindow().setStatusBarColor(color);
-        } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+        } else {
             if (useSystemBarTintLollipop) {
                 getWindow().clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
                 getWindow().addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
                 getWindow().setStatusBarColor(color);
             }
-        } else if (!isFullScreen()) {
-            mTintManager.setStatusBarTintEnabled(true);
-            mTintManager.setStatusBarTintColor(color);
         }
     }
 
@@ -159,43 +151,35 @@ public class ActionBarActivity extends AppCompatActivity {
     }
 
     public void setStatusBarTranslucent() {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            getWindow().setStatusBarColor(Color.parseColor("#1f000000"));
-            setSystemUiFloatFullScreen(true);
-        }
+        getWindow().setStatusBarColor(Color.parseColor("#1f000000"));
+        setSystemUiFloatFullScreen(true);
     }
 
     public void setStatusBarTransparent() {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            getWindow().setStatusBarColor(Color.TRANSPARENT);
-            setSystemUiFloatFullScreen(true);
-        }
+        getWindow().setStatusBarColor(Color.TRANSPARENT);
+        setSystemUiFloatFullScreen(true);
     }
 
 
     public void setSystemUiFloatFullScreen(boolean enable) {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            if (enable) {
-                findViewById(R.id.container_view).setFitsSystemWindows(false);
-                findViewById(R.id.container_view).setPadding(0, 0, 0, 0);
-                ((RelativeLayout.LayoutParams) findViewById(R.id.actionbar_view).getLayoutParams()).topMargin = getStatusBarHeight();
-            } else {
-                findViewById(R.id.container_view).setFitsSystemWindows(true);
-                findViewById(R.id.container_view).setPadding(0, getStatusBarHeight(), 0, 0);
-                ((RelativeLayout.LayoutParams) findViewById(R.id.actionbar_view).getLayoutParams()).topMargin = 0;
-            }
-            View decorView = this.getWindow().getDecorView();
-            int option = decorView.getSystemUiVisibility();
-            if (enable) {
-                option |= View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN;
-            } else {
-                option &= ~View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN;
-            }
-
-            decorView.setSystemUiVisibility(option);
-
-            decorView.requestApplyInsets();
+        if (enable) {
+            findViewById(R.id.container_view).setFitsSystemWindows(false);
+            findViewById(R.id.container_view).setPadding(0, 0, 0, 0);
+            ((RelativeLayout.LayoutParams) findViewById(R.id.actionbar_view).getLayoutParams()).topMargin = getStatusBarHeight();
+        } else {
+            findViewById(R.id.container_view).setFitsSystemWindows(true);
+            findViewById(R.id.container_view).setPadding(0, getStatusBarHeight(), 0, 0);
+            ((RelativeLayout.LayoutParams) findViewById(R.id.actionbar_view).getLayoutParams()).topMargin = 0;
         }
+        View decorView = this.getWindow().getDecorView();
+        int option = decorView.getSystemUiVisibility();
+        if (enable) {
+            option |= View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN;
+        } else {
+            option &= ~View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN;
+        }
+        decorView.setSystemUiVisibility(option);
+        decorView.requestApplyInsets();
     }
 
     private int getStatusBarHeight() {
@@ -217,15 +201,12 @@ public class ActionBarActivity extends AppCompatActivity {
             getWindow().clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);
             getWindow().addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
             getWindow().setNavigationBarColor(color);
-        } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+        } else {
             if (useSystemBarTintLollipop) {
                 getWindow().clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);
                 getWindow().addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
                 getWindow().setNavigationBarColor(color);
             }
-        } else if (!isFullScreen()) {
-            mTintManager.setNavigationBarTintEnabled(true);
-            mTintManager.setNavigationBarTintColor(color);
         }
     }
 
@@ -307,67 +288,42 @@ public class ActionBarActivity extends AppCompatActivity {
      * @param fullscreen 是否全屏
      */
     public void setFullScreen(boolean fullscreen) {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            if (fullscreen) {
-                this.getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
-            } else {
-                this.getWindow().clearFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
-            }
+        if (fullscreen) {
+            this.getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
         } else {
-            int newVisibility = View.SYSTEM_UI_FLAG_LAYOUT_STABLE
-                    | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
-                    | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN;
-
-            if (fullscreen) {
-                newVisibility |= View.SYSTEM_UI_FLAG_FULLSCREEN
-                        | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION;
-            }
-            // Set the visibility
-            this.getWindow().getDecorView().setSystemUiVisibility(newVisibility);
+            this.getWindow().clearFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
         }
     }
 
     public void setFullScreenNoActionBar(boolean fullscreen) {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            if (fullscreen) {
-                setRootViewFitsSystemWindows(false);
-                setActionbarShow(false);
-                int option = View.SYSTEM_UI_FLAG_LAYOUT_STABLE
-                        | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
-                        | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
-                        | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION // hide nav bar
-                        | View.SYSTEM_UI_FLAG_FULLSCREEN // hide status bar
-                        | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY;
-                this.getWindow().getDecorView().setSystemUiVisibility(option);
-
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
-                    WindowManager.LayoutParams lp = this.getWindow().getAttributes();
-                    lp.layoutInDisplayCutoutMode = WindowManager.LayoutParams.LAYOUT_IN_DISPLAY_CUTOUT_MODE_SHORT_EDGES;
-                    this.getWindow().setAttributes(lp);
-                }
-                this.getWindow().getDecorView().requestApplyInsets();
-            } else {
-                setRootViewFitsSystemWindows(true);
-                setActionbarShow(true);
-                this.getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_VISIBLE);
-                this.getWindow().getDecorView().requestApplyInsets();
-            }
-        } else {
-            int newVisibility = View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+        if (fullscreen) {
+            setRootViewFitsSystemWindows(false);
+            setActionbarShow(false);
+            int option = View.SYSTEM_UI_FLAG_LAYOUT_STABLE
                     | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
-                    | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN;
+                    | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                    | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION // hide nav bar
+                    | View.SYSTEM_UI_FLAG_FULLSCREEN // hide status bar
+                    | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY;
+            this.getWindow().getDecorView().setSystemUiVisibility(option);
 
-            if (fullscreen) {
-                newVisibility |= View.SYSTEM_UI_FLAG_FULLSCREEN
-                        | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION;
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
+                WindowManager.LayoutParams lp = this.getWindow().getAttributes();
+                lp.layoutInDisplayCutoutMode = WindowManager.LayoutParams.LAYOUT_IN_DISPLAY_CUTOUT_MODE_SHORT_EDGES;
+                this.getWindow().setAttributes(lp);
             }
-            // Set the visibility
-            this.getWindow().getDecorView().setSystemUiVisibility(newVisibility);
+            this.getWindow().getDecorView().requestApplyInsets();
+        } else {
+            setRootViewFitsSystemWindows(true);
+            setActionbarShow(true);
+            this.getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_VISIBLE);
+            this.getWindow().getDecorView().requestApplyInsets();
         }
     }
 
     /**
      * 返回是否全屏
+     *
      * @return 是否全屏
      */
     public boolean isFullScreen() {
@@ -408,6 +364,7 @@ public class ActionBarActivity extends AppCompatActivity {
 
     /**
      * 返回actionbar的显示
+     *
      * @return 是否显示
      */
     public boolean isActionbarShow() {
@@ -438,7 +395,7 @@ public class ActionBarActivity extends AppCompatActivity {
     /**
      * menu菜单选择监听方法
      *
-     * @param actionMenu  菜单
+     * @param actionMenu 菜单
      * @return 是否添加
      */
     public boolean onMenuActionSelected(ActionMenuItem actionMenu) {
@@ -508,7 +465,7 @@ public class ActionBarActivity extends AppCompatActivity {
     /**
      * 设置阴影
      *
-     * @param shadow 是否阴影
+     * @param shadow    是否阴影
      * @param elevation 阴影半径
      */
     public void setActionbarShadow(boolean shadow, float elevation) {
