@@ -41,7 +41,6 @@ public class ThemeActivity extends ActionBarActivity {
         }
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_theme);
-        this.setStatusBarTintColor(getResources().getColor(R.color.green));
         this.setActionbarShadow(true);
         this.getCustomActionBar().displayUpIndicator();
         this.setTitle(this.getClass().getSimpleName().replace("Activity", ""));
