@@ -71,6 +71,10 @@ public class ActionBarActivity extends AppCompatActivity {
         }
     }
 
+    public View getContentView() {
+        return mDelegate.getRootView();
+    }
+
     /**
      * 设置标题
      *

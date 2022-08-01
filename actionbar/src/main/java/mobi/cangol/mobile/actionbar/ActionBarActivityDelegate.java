@@ -19,7 +19,6 @@ import androidx.annotation.RequiresApi;
 import java.util.ArrayList;
 
 import mobi.cangol.mobile.actionbar.internal.ActionBarImpl;
-import mobi.cangol.mobile.actionbar.view.ActionBarView;
 import mobi.cangol.mobile.actionbar.view.SearchView;
 
 /**
@@ -43,9 +42,9 @@ public class ActionBarActivityDelegate {
     protected void onCreate(Bundle savedInstanceState) {
         mContainerView = (ViewGroup) LayoutInflater.from(mActivity).inflate(R.layout.actionbar_activity_main, null);
         mRootView = mContainerView.findViewById(R.id.container_view);
-        mContentView = (FrameLayout) mContainerView.findViewById(R.id.actionbar_content_view);
-        mMaskView = (FrameLayout) mContainerView.findViewById(R.id.actionbar_mask_view);
-        mActionBar = new ActionBarImpl((ActionBarView) mContainerView.findViewById(R.id.actionbar_view));
+        mContentView = mContainerView.findViewById(R.id.actionbar_content_view);
+        mMaskView = mContainerView.findViewById(R.id.actionbar_mask_view);
+        mActionBar = new ActionBarImpl(mContainerView.findViewById(R.id.actionbar_view));
     }
 
     public RelativeLayout getRootView() {
@@ -87,16 +86,10 @@ public class ActionBarActivityDelegate {
             mActionBar.clearListNavigation();
             mActionBar.setListNavigation(navs);
 
-//            ArrayList<ActionMenuItem> menus = savedInstanceState.getParcelableArrayList("ActionBar.menus");
-//            mActionBar.clearActionMenus();
-//            mActionBar.setMenus(menus);
-
             ArrayList<ActionTabItem> tabs = savedInstanceState.getParcelableArrayList("ActionBar.tabs");
             mActionBar.clearActionTabs();
             mActionBar.setTabs(tabs);
             mActionBar.getActionTab().setTabSelected(savedInstanceState.getInt("ActionBar.tabs.selected"));
-
-
         }
         mActionBar.clearActionMenus();
         mActivity.onMenuActionCreated(mActionBar.getActionMenu());
