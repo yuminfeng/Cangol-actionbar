@@ -10,3 +10,9 @@
 ## 1.2.5
 
 - add getContentView()
+
+## 1.2.6
+
+- remove setFitsSystemWindows
+- remove setStatusBarTextColor 方法合并至setStatusBarTintColor()
+- remove setStatusBarTextColorWithXiaomi
