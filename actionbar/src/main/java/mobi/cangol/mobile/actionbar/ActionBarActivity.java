@@ -147,16 +147,6 @@ public class ActionBarActivity extends AppCompatActivity {
         return ColorUtils.calculateLuminance(color) >= 0.5;
     }
 
-    @RequiresApi(api = Build.VERSION_CODES.ICE_CREAM_SANDWICH)
-    public void setFitsSystemWindows(int layoutId) {
-        if (layoutId == R.id.container_view) {
-            findViewById(R.id.container_view).setFitsSystemWindows(true);
-        } else {
-            findViewById(R.id.container_view).setFitsSystemWindows(false);
-            findViewById(layoutId).setFitsSystemWindows(true);
-        }
-    }
-
     public void setStatusBarTranslucent() {
         getWindow().setStatusBarColor(Color.parseColor("#1f000000"));
         setSystemUiFloatFullScreen(true);
