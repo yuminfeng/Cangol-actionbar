@@ -2,7 +2,6 @@ package mobi.cangol.mobile.actionbar;
 
 import android.app.Activity;
 import android.content.res.TypedArray;
-import android.os.Build;
 import android.os.Bundle;
 import android.os.Parcelable;
 import android.util.TypedValue;
@@ -13,8 +12,6 @@ import android.view.ViewGroup;
 import android.view.ViewGroup.LayoutParams;
 import android.widget.FrameLayout;
 import android.widget.RelativeLayout;
-
-import androidx.annotation.RequiresApi;
 
 import java.util.ArrayList;
 
@@ -100,7 +97,6 @@ public class ActionBarActivityDelegate {
         }
     }
 
-    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     private void attachToActivity(Activity activity, View layout) {
         // get the window background
         int background = 0;
@@ -126,8 +122,8 @@ public class ActionBarActivityDelegate {
             }
         }
         if (decorChild.getBackground() != null) {
-            mContainerView.setBackgroundDrawable(decorChild.getBackground());
-            decorChild.setBackgroundDrawable(null);
+            mContainerView.setBackground(decorChild.getBackground());
+            decorChild.setBackground(null);
         }
         decor.removeView(decorChild);
         decor.addView(layout, 0, decorChild.getLayoutParams());
