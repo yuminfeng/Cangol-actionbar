@@ -1,93 +1,72 @@
-<!--
-  ~
-  ~  Copyright (c) 2013 Cangol
-  ~   <p/>
-  ~   Licensed under the Apache License, Version 2.0 (the "License")
-  ~   you may not use this file except in compliance with the License.
-  ~   You may obtain a copy of the License at
-  ~  <p/>
-  ~  http://www.apache.org/licenses/LICENSE-2.0
-  ~  <p/>
-  ~  Unless required by applicable law or agreed to in writing, software
-  ~  distributed under the License is distributed on an "AS IS" BASIS,
-  ~  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-  ~  See the License for the specific language governing permissions and
-  ~  limitations under the License.
-  -->
-
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:background="@android:color/holo_orange_dark"
-              android:orientation="vertical">
+    android:orientation="vertical">
 
 
     <Button
         android:id="@+id/button_menu_1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="全屏"/>
+        android:text="全屏" />
+
     <View
         android:layout_width="match_parent"
         android:layout_height="10dp"
-        android:background="@android:color/holo_red_dark"/>
+        android:background="@android:color/holo_red_dark" />
+
     <Button
         android:id="@+id/button_menu_2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="显示/隐藏"/>
+        android:text="显示/隐藏" />
 
     <Button
         android:id="@+id/button_menu_3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="悬浮"/>
+        android:text="悬浮" />
 
     <Button
         android:id="@+id/button_menu_4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="显示Home"/>
-
-    <Button
-        android:id="@+id/button_menu_5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="maskView"/>
+        android:text="显示Home" />
 
     <Button
         android:id="@+id/button_menu_6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="setWindowBackground"/>
+        android:text="setWindowBackground" />
 
     <Button
         android:id="@+id/button_menu_7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="setBackgroundResource"/>
+        android:text="setBackgroundResource" />
 
     <Button
         android:id="@+id/button_menu_8"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="setStatusBarTintColor"/>
+        android:text="setStatusBarTintColor" />
 
     <Button
         android:id="@+id/button_menu_9"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="setNavigationBarTintColor"/>
+        android:text="setNavigationBarTintColor" />
 
     <Button
         android:id="@+id/button_menu_10"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="ActionBar setBackgroundResource"/>
+        android:text="ActionBar setBackgroundResource" />
 
     <Button
         android:id="@+id/button_menu_11"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="left menu"/>
+        android:text="left menu" />
 </LinearLayout>

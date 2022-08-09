@@ -18,10 +18,4 @@
         android:layout_height="@dimen/actionbar_height"
         android:layout_alignParentTop="true" />
 
-    <FrameLayout
-        android:id="@+id/actionbar_mask_view"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:visibility="gone" />
-
 </RelativeLayout>

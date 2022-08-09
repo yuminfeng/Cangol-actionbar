@@ -8,7 +8,6 @@ import android.util.TypedValue;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.WindowManager;
-import android.widget.FrameLayout;
 import android.widget.RelativeLayout;
 
 import androidx.annotation.AttrRes;
@@ -192,24 +191,6 @@ public class ActionBarActivity extends AppCompatActivity {
         getWindow().clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
         getWindow().setNavigationBarColor(color);
-    }
-
-    /**
-     * 获取遮罩整个activity的mask
-     *
-     * @return 遮罩view
-     */
-    public FrameLayout getMaskView() {
-        return mDelegate.getMaskView();
-    }
-
-    /**
-     * 显示遮罩
-     *
-     * @param display 是否遮罩
-     */
-    public void displayMaskView(boolean display) {
-        mDelegate.displayMaskView(display);
     }
 
     /**

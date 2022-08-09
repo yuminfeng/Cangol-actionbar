@@ -31,7 +31,6 @@ public class ActionBarActivityDelegate {
     private RelativeLayout mRootView;
     private ActionBar mActionBar;
     private FrameLayout mContentView;
-    private FrameLayout mMaskView;
     private SearchView mSearchView;
     private boolean mActionbarOverlay = false;
 
@@ -43,7 +42,6 @@ public class ActionBarActivityDelegate {
         mContainerView = (ViewGroup) LayoutInflater.from(mActivity).inflate(R.layout.actionbar_activity_main, null);
         mRootView = mContainerView.findViewById(R.id.container_view);
         mContentView = mContainerView.findViewById(R.id.actionbar_content_view);
-        mMaskView = mContainerView.findViewById(R.id.actionbar_mask_view);
         mActionBar = new ActionBarImpl(mContainerView.findViewById(R.id.actionbar_view));
     }
 
@@ -191,14 +189,6 @@ public class ActionBarActivityDelegate {
 
     public void setTitle(CharSequence title) {
         mActionBar.setTitle(title);
-    }
-
-    public FrameLayout getMaskView() {
-        return mMaskView;
-    }
-
-    public void displayMaskView(boolean show) {
-        mMaskView.setVisibility(show ? View.VISIBLE : View.GONE);
     }
 
     public SearchView startSearchMode() {

@@ -29,7 +29,7 @@ import mobi.cangol.mobile.actionbar.ActionMenu;
 import mobi.cangol.mobile.actionbar.ActionMenuItem;
 
 @SuppressLint("ResourceAsColor")
-public class MenuActivity extends ActionBarActivity{
+public class MenuActivity extends ActionBarActivity {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -37,21 +37,22 @@ public class MenuActivity extends ActionBarActivity{
         setContentView(R.layout.activity_menu_view);
         this.getCustomActionBar().displayUpIndicator();
         this.getCustomActionBar().setArrowDrawableThickness(5f);
-        this.setTitle(this.getClass().getSimpleName().replace("Activity",""));
+        this.setTitle(this.getClass().getSimpleName().replace("Activity", ""));
         findViews();
     }
 
     public void findViews() {
         this.findViewById(R.id.button_menu_1).setOnClickListener(new OnClickListener() {
             boolean fullScreen;
+
             @Override
             public void onClick(View v) {
-                if(!fullScreen){
+                if (!fullScreen) {
                     setFullScreen(true);
-                    fullScreen=true;
-                } else{
+                    fullScreen = true;
+                } else {
                     setFullScreen(false);
-                    fullScreen=false;
+                    fullScreen = false;
                 }
 
             }
@@ -59,7 +60,7 @@ public class MenuActivity extends ActionBarActivity{
         this.findViewById(R.id.button_menu_2).setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                    setActionbarShow(!isActionbarShow());
+                setActionbarShow(!isActionbarShow());
             }
         });
 
@@ -71,29 +72,16 @@ public class MenuActivity extends ActionBarActivity{
         });
 
         this.findViewById(R.id.button_menu_4).setOnClickListener(new OnClickListener() {
-            boolean displayHome=true;
+            boolean displayHome = true;
+
             @Override
             public void onClick(View v) {
-                if(!displayHome){
+                if (!displayHome) {
                     getCustomActionBar().setDisplayShowHomeEnabled(true);
-                    displayHome=true;
-                }else{
+                    displayHome = true;
+                } else {
                     getCustomActionBar().setDisplayShowHomeEnabled(false);
-                    displayHome=false;
-                }
-            }
-        });
-        //this.setMaskView();
-        this.findViewById(R.id.button_menu_5).setOnClickListener(new OnClickListener() {
-            boolean maskView;
-            @Override
-            public void onClick(View v) {
-                if(!maskView){
-                    displayMaskView(true);
-                    maskView=true;
-                }else{
-                    displayMaskView(false);
-                    maskView=false;
+                    displayHome = false;
                 }
             }
         });
@@ -134,13 +122,14 @@ public class MenuActivity extends ActionBarActivity{
                 getCustomActionBar().setLeftMenu(0x11, R.string.action_setting, -1, new OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Log.e(">>","click me");
+                        Log.e(">>", "click me");
                         showToast("click me");
                     }
                 });
             }
         });
     }
+
     @Override
     public void onMenuActionCreated(ActionMenu actionMenu) {
         super.onMenuActionCreated(actionMenu);
