@@ -16,3 +16,4 @@
 - remove setFitsSystemWindows
 - remove setStatusBarTextColor 方法合并至setStatusBarTintColor()
 - remove setStatusBarTextColorWithXiaomi
+- remove MaskView
