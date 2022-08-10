@@ -5,12 +5,11 @@ fir {
     changeLog ''
 }
 dependencies {
-    api fileTree(include: ['*.jar', '*.aar'], dir: 'libs')
+    implementation project(':actionbar')
 
     implementation 'com.google.android.material:material:1.2.1'
-    implementation project(':actionbar')
     //leak canary
-    debugImplementation 'com.squareup.leakcanary:leakcanary-android:2.2'
+    debugImplementation 'com.squareup.leakcanary:leakcanary-android:2.5'
 }
 
 android {
