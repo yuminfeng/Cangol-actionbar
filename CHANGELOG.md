@@ -25,3 +25,4 @@
 - upgrade sdk_version = 31
 - upgrade gradle 7.1.2
 - remove fir plugin
+- remove kt3k.gradle.plugin
