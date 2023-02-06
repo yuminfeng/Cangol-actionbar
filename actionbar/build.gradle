@@ -5,7 +5,7 @@ apply from: '../maven_push.gradle'
 apply from: '../config/quality.gradle'
 
 dependencies {
-    def appcompat_version = "1.2.0"
+    def appcompat_version = "1.4.1"
     implementation "androidx.appcompat:appcompat:$appcompat_version"
     // For loading and tinting drawables on older versions of the platform
     implementation "androidx.appcompat:appcompat-resources:$appcompat_version"
