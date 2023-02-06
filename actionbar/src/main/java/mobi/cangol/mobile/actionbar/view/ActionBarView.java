@@ -3,7 +3,6 @@ package mobi.cangol.mobile.actionbar.view;
 import android.content.Context;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
-import android.os.Build;
 import android.util.AttributeSet;
 import android.util.TypedValue;
 import android.view.Gravity;
@@ -26,7 +25,6 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.annotation.RequiresApi;
 import androidx.appcompat.graphics.drawable.DrawerArrowDrawable;
 
 import java.util.List;
@@ -80,7 +78,6 @@ public class ActionBarView extends RelativeLayout {
         initView(context);
     }
 
-    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     public ActionBarView(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
         super(context, attrs, defStyleAttr, defStyleRes);
         initView(context);
@@ -100,7 +97,6 @@ public class ActionBarView extends RelativeLayout {
         TypedValue typedValue = new TypedValue();
         context.getTheme().resolveAttribute(R.attr.actionbar_indicator, typedValue, true);
         mDrawerArrowDrawable.setColor(typedValue.data);
-
 
 
         mInflater.inflate(R.layout.actionbar_layout, this, true);
@@ -141,7 +137,8 @@ public class ActionBarView extends RelativeLayout {
 
         });
     }
-    public void setArrowDrawableThickness(float width){
+
+    public void setArrowDrawableThickness(float width) {
         mDrawerArrowDrawable.setBarThickness(width);
     }
 
@@ -273,6 +270,7 @@ public class ActionBarView extends RelativeLayout {
         mDrawerArrowDrawable.setProgress(0);
         mIndicator.setImageDrawable(mDrawerArrowDrawable);
     }
+
     public void setDisplayShowHomeEnabled(boolean show) {
         mDisplayShowHomeEnabled = show;
         mIndicator.setVisibility(show ? View.VISIBLE : View.GONE);
@@ -287,9 +285,11 @@ public class ActionBarView extends RelativeLayout {
         }
         mIndicator.setVisibility(mDisplayShowHomeEnabled ? View.VISIBLE : View.GONE);
     }
+
     public void hideHomeAsUpIndicator() {
         mIndicator.setVisibility(View.GONE);
     }
+
     public void displayUpIndicator() {
         if (!mIsCustomHomeAsUpIndicator) {
             mDrawerArrowDrawable.setProgress(1);

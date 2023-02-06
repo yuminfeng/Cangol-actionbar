@@ -2,7 +2,6 @@ package mobi.cangol.mobile.actionbar.view;
 
 import android.content.Context;
 import android.graphics.drawable.BitmapDrawable;
-import android.os.Build;
 import android.util.AttributeSet;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -16,7 +15,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
-import androidx.annotation.RequiresApi;
 
 import java.util.List;
 
@@ -48,7 +46,6 @@ public class ActionMenuView extends LinearLayout implements OnClickListener, OnL
         initViews(context);
     }
 
-    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     public ActionMenuView(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
         super(context, attrs, defStyleAttr, defStyleRes);
         initViews(context);
@@ -113,7 +110,7 @@ public class ActionMenuView extends LinearLayout implements OnClickListener, OnL
 
             int left = ((mActionMenu.size() - mShowActions) > 0 ? mMoreButton.getWidth() : 0) + view.getWidth() * (mShowActions) - view.getLeft();
 
-            if(toast!=null){
+            if (toast != null) {
                 toast.setGravity(Gravity.RIGHT | Gravity.TOP, left, this.getBottom());
                 toast.show();
             }
@@ -144,8 +141,8 @@ public class ActionMenuView extends LinearLayout implements OnClickListener, OnL
                 mShowActions++;
             } else {
                 if (mShowActions == 2) {
-                    View view=mActionsView.getChildAt(1);
-                    ActionMenuItem tag= (ActionMenuItem) view.getTag();
+                    View view = mActionsView.getChildAt(1);
+                    ActionMenuItem tag = (ActionMenuItem) view.getTag();
                     mActionsView.removeView(view);
                     mPopupActionsView.addView(inflateMenuAction(tag));
                     mMoreButton.setVisibility(View.VISIBLE);
@@ -155,8 +152,8 @@ public class ActionMenuView extends LinearLayout implements OnClickListener, OnL
             }
         } else {
             if (mShowActions == 2) {
-                View view=mActionsView.getChildAt(1);
-                ActionMenuItem tag= (ActionMenuItem) view.getTag();
+                View view = mActionsView.getChildAt(1);
+                ActionMenuItem tag = (ActionMenuItem) view.getTag();
                 mActionsView.removeView(view);
                 mPopupActionsView.addView(inflateMenuAction(tag));
                 mMoreButton.setVisibility(View.VISIBLE);
