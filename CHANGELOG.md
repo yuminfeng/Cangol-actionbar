@@ -27,3 +27,7 @@
 - remove fir plugin
 - remove kt3k.gradle.plugin
 - remove leak canary
+
+## 1.2.8
+
+- remove ScrollingTextView
