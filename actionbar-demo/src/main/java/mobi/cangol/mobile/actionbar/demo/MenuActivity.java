@@ -94,7 +94,7 @@ public class MenuActivity extends ActionBarActivity {
         this.findViewById(R.id.button_menu_7).setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                setBackgroundResource(R.color.activity_background);
+                setBackgroundResource(R.color.blue);
             }
         });
         this.findViewById(R.id.button_menu_8).setOnClickListener(new OnClickListener() {
