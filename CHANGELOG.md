@@ -31,3 +31,4 @@
 ## 1.2.8
 
 - remove ScrollingTextView
+- remove SearchView

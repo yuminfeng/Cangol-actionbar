@@ -16,7 +16,6 @@ import android.widget.RelativeLayout;
 import java.util.ArrayList;
 
 import mobi.cangol.mobile.actionbar.internal.ActionBarImpl;
-import mobi.cangol.mobile.actionbar.view.SearchView;
 
 /**
  * @author Cangol
@@ -28,7 +27,6 @@ public class ActionBarActivityDelegate {
     private RelativeLayout mRootView;
     private ActionBar mActionBar;
     private FrameLayout mContentView;
-    private SearchView mSearchView;
     private boolean mActionbarOverlay = false;
 
     public ActionBarActivityDelegate(ActionBarActivity activity) {
@@ -161,12 +159,7 @@ public class ActionBarActivityDelegate {
 
     public boolean onKeyUp(int keyCode, KeyEvent event) {
         if (keyCode == KeyEvent.KEYCODE_BACK && event.isTracking() && !event.isCanceled()) {
-            if (mSearchView != null) {
-                stopSearchMode();
-                return true;
-            } else {
-                return mActionBar.onBackPressed();
-            }
+            return mActionBar.onBackPressed();
         }
         return false;
     }
@@ -185,24 +178,6 @@ public class ActionBarActivityDelegate {
 
     public void setTitle(CharSequence title) {
         mActionBar.setTitle(title);
-    }
-
-    public SearchView startSearchMode() {
-        RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.MATCH_PARENT,
-                RelativeLayout.LayoutParams.MATCH_PARENT);
-        mSearchView = new SearchView(this.mActivity);
-        int aIndex = mContainerView.indexOfChild(mContainerView.findViewById(R.id.actionbar_view));
-        mContainerView.addView(mSearchView, aIndex + 1, layoutParams);
-        mSearchView.show();
-        return mSearchView;
-    }
-
-    public void stopSearchMode() {
-        if (mSearchView != null) {
-            mContainerView.removeView(mSearchView);
-            mSearchView.hide();
-            mSearchView = null;
-        }
     }
 
     public boolean isActionbarShow() {

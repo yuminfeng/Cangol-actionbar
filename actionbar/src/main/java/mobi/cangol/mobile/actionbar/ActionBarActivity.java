@@ -15,8 +15,6 @@ import androidx.annotation.ColorInt;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.ColorUtils;
 
-import mobi.cangol.mobile.actionbar.view.SearchView;
-
 public class ActionBarActivity extends AppCompatActivity {
     private ActionBarActivityDelegate mDelegate;
 
@@ -191,22 +189,6 @@ public class ActionBarActivity extends AppCompatActivity {
         getWindow().clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
         getWindow().setNavigationBarColor(color);
-    }
-
-    /**
-     * 开启搜索模式，与stopSearchMode成对使用
-     *
-     * @return SearchView
-     */
-    public SearchView startSearchMode() {
-        return mDelegate.startSearchMode();
-    }
-
-    /**
-     * 停止搜索模式
-     */
-    public void stopSearchMode() {
-        mDelegate.stopSearchMode();
     }
 
     /**

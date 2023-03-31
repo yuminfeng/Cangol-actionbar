@@ -16,9 +16,6 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".SearchViewActivity"
-            android:configChanges="layoutDirection|locale" />
-        <activity
             android:name=".ActionModeActivity"
             android:configChanges="layoutDirection|locale" />
         <activity
