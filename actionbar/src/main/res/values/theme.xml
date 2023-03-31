@@ -47,13 +47,11 @@
         <item name="actionbar_menu_item_bg_selector">@drawable/actionbar_menu_item_bg_light</item>
         <item name="actionbar_mode_bg_selector">@drawable/actionbar_mode_bg_light</item>
         <item name="actionbar_popup_item_bg_selector">@drawable/actionbar_popup_item_bg_light</item>
-        <item name="actionbar_search_mask_bg_selector">@drawable/actionbar_search_mask_bg_light</item>
         <item name="actionbar_tab_bg_selector">@drawable/actionbar_tab_bg_light</item>
 
         <item name="actionbar_more">@drawable/actionbar_more_light</item>
         <item name="actionbar_dropdown">@drawable/actionbar_dropdown_light</item>
         <item name="actionbar_dropup">@drawable/actionbar_dropup_light</item>
-        <item name="actionbar_search">@drawable/actionbar_search_light</item>
         <item name="actionbar_clear">@drawable/actionbar_clear_light</item>
         <item name="actionbar_voice">@drawable/actionbar_voice_light</item>
         <item name="actionbar_done">@drawable/actionbar_done_light</item>
@@ -110,13 +108,11 @@
         <item name="actionbar_menu_item_bg_selector">@drawable/actionbar_menu_item_bg_dark</item>
         <item name="actionbar_mode_bg_selector">@drawable/actionbar_mode_bg_dark</item>
         <item name="actionbar_popup_item_bg_selector">@drawable/actionbar_popup_item_bg_dark</item>
-        <item name="actionbar_search_mask_bg_selector">@drawable/actionbar_search_mask_bg_dark</item>
         <item name="actionbar_tab_bg_selector">@drawable/actionbar_tab_bg_dark</item>
 
         <item name="actionbar_more">@drawable/actionbar_more_dark</item>
         <item name="actionbar_dropdown">@drawable/actionbar_dropdown_dark</item>
         <item name="actionbar_dropup">@drawable/actionbar_dropup_dark</item>
-        <item name="actionbar_search">@drawable/actionbar_search_dark</item>
         <item name="actionbar_clear">@drawable/actionbar_clear_dark</item>
         <item name="actionbar_voice">@drawable/actionbar_voice_dark</item>
         <item name="actionbar_done">@drawable/actionbar_done_dark</item>

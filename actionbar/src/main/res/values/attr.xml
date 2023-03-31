@@ -47,13 +47,11 @@
         <attr name="actionbar_menu_item_bg_selector" format="reference" />
         <attr name="actionbar_mode_bg_selector" format="reference" />
         <attr name="actionbar_popup_item_bg_selector" format="reference" />
-        <attr name="actionbar_search_mask_bg_selector" format="reference" />
         <attr name="actionbar_tab_bg_selector" format="reference" />
 
         <attr name="actionbar_more" format="reference" />
         <attr name="actionbar_dropdown" format="reference" />
         <attr name="actionbar_dropup" format="reference" />
-        <attr name="actionbar_search" format="reference" />
         <attr name="actionbar_clear" format="reference" />
         <attr name="actionbar_voice" format="reference" />
         <attr name="actionbar_done" format="reference" />
