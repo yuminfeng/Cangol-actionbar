@@ -53,7 +53,6 @@
         <item name="actionbar_dropdown">@drawable/actionbar_dropdown_light</item>
         <item name="actionbar_dropup">@drawable/actionbar_dropup_light</item>
         <item name="actionbar_clear">@drawable/actionbar_clear_light</item>
-        <item name="actionbar_voice">@drawable/actionbar_voice_light</item>
         <item name="actionbar_done">@drawable/actionbar_done_light</item>
         <item name="actionbar_refresh">@mipmap/ic_actionbar_refresh_light</item>
 
@@ -114,7 +113,6 @@
         <item name="actionbar_dropdown">@drawable/actionbar_dropdown_dark</item>
         <item name="actionbar_dropup">@drawable/actionbar_dropup_dark</item>
         <item name="actionbar_clear">@drawable/actionbar_clear_dark</item>
-        <item name="actionbar_voice">@drawable/actionbar_voice_dark</item>
         <item name="actionbar_done">@drawable/actionbar_done_dark</item>
         <item name="actionbar_refresh">@mipmap/ic_actionbar_refresh</item>
 

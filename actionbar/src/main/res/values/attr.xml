@@ -53,7 +53,6 @@
         <attr name="actionbar_dropdown" format="reference" />
         <attr name="actionbar_dropup" format="reference" />
         <attr name="actionbar_clear" format="reference" />
-        <attr name="actionbar_voice" format="reference" />
         <attr name="actionbar_done" format="reference" />
         <attr name="actionbar_refresh" format="reference" />
 
