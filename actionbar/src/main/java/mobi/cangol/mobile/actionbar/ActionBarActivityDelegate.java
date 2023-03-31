@@ -11,7 +11,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewGroup.LayoutParams;
 import android.widget.FrameLayout;
-import android.widget.RelativeLayout;
 
 import java.util.ArrayList;
 
@@ -48,6 +47,7 @@ public class ActionBarActivityDelegate {
         return mActionbarOverlay;
     }
 
+    @Deprecated
     public void setActionbarOverlay(boolean mActionbarOverlay) {
         this.mActionbarOverlay = mActionbarOverlay;
         if (mActionbarOverlay) {

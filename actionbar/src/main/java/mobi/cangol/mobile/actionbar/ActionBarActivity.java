@@ -267,6 +267,7 @@ public class ActionBarActivity extends AppCompatActivity {
      *
      * @param mActionbarOverlay 是否悬浮
      */
+    @Deprecated
     public void setActionbarOverlay(boolean mActionbarOverlay) {
         this.mDelegate.setActionbarOverlay(mActionbarOverlay);
     }
@@ -289,7 +290,6 @@ public class ActionBarActivity extends AppCompatActivity {
     public void setActionbarShow(boolean show) {
         this.mDelegate.setActionbarOverlay(!show);
         this.mDelegate.setActionbarShow(show);
-
     }
 
     /**
