@@ -24,7 +24,7 @@ public class TransparentActivity extends ActionBarActivity {
     }
 
     public void findViews() {
-        setActionbarOverlay(true);
+//        setActionbarOverlay(true);
         this.findViewById(R.id.button_transparent_0).setOnClickListener(new View.OnClickListener() {
             @RequiresApi(api = Build.VERSION_CODES.M)
             @Override
@@ -67,13 +67,17 @@ public class TransparentActivity extends ActionBarActivity {
         this.findViewById(R.id.button_transparent_21).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                setTranslucent(true);
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+                    setTranslucent(true);
+                }
             }
         });
         this.findViewById(R.id.button_transparent_22).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                setTranslucent(false);
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+                    setTranslucent(false);
+                }
             }
         });
 

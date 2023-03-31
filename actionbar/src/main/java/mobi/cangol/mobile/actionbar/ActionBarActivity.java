@@ -258,19 +258,19 @@ public class ActionBarActivity extends AppCompatActivity {
      *
      * @return 是否悬浮
      */
-    public boolean isActionbarOverlay() {
-        return mDelegate.isActionbarOverlay();
-    }
+//    public boolean isActionbarOverlay() {
+//        return mDelegate.isActionbarOverlay();
+//    }
 
     /**
      * 设置actionbar是否悬浮
      *
      * @param mActionbarOverlay 是否悬浮
      */
-    @Deprecated
-    public void setActionbarOverlay(boolean mActionbarOverlay) {
-        this.mDelegate.setActionbarOverlay(mActionbarOverlay);
-    }
+//    @Deprecated
+//    public void setActionbarOverlay(boolean mActionbarOverlay) {
+//        this.mDelegate.setActionbarOverlay(mActionbarOverlay);
+//    }
 
     /**
      * 返回actionbar的显示
@@ -288,7 +288,7 @@ public class ActionBarActivity extends AppCompatActivity {
      * @param show 是否显示
      */
     public void setActionbarShow(boolean show) {
-        this.mDelegate.setActionbarOverlay(!show);
+//        this.mDelegate.setActionbarOverlay(!show);
         this.mDelegate.setActionbarShow(show);
     }
 
