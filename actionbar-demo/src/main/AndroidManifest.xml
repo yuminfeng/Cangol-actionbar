@@ -45,10 +45,6 @@
         <activity
             android:name=".TransparentActivity"
             android:configChanges="layoutDirection|locale" />
-        <activity
-            android:name=".TransparentNativeActivity"
-            android:configChanges="layoutDirection|locale"
-            android:theme="@style/Theme.AppCompat.Light.DarkActionBar" />
     </application>
 
 </manifest>
