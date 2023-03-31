@@ -24,7 +24,7 @@ public class ActionBarActivityDelegate {
 
     private ActionBarActivity mActivity;
     private ViewGroup mContainerView;
-    private RelativeLayout mRootView;
+    private View mRootView;
     private ActionBar mActionBar;
     private FrameLayout mContentView;
     private boolean mActionbarOverlay = false;
@@ -40,7 +40,7 @@ public class ActionBarActivityDelegate {
         mActionBar = new ActionBarImpl(mContainerView.findViewById(R.id.actionbar_view));
     }
 
-    public RelativeLayout getRootView() {
+    public View getRootView() {
         return mRootView;
     }
 
