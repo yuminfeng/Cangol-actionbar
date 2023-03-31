@@ -87,50 +87,44 @@ public class TransparentNativeActivity extends AppCompatActivity {
     }
 
     public void setStatusBarTranslucent() {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            getWindow().clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
-            getWindow().addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+        getWindow().clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             getWindow().setStatusBarColor(getColor(R.color.translucent));
         }
     }
 
     public void setStatusBarTransparent() {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            getWindow().clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
-            getWindow().addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
-            getWindow().setStatusBarColor(Color.TRANSPARENT);
-        }
+        getWindow().clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+        getWindow().setStatusBarColor(Color.TRANSPARENT);
     }
 
     public void resetSystemUi() {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            getWindow().clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
-            getWindow().addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+        getWindow().clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
 
-            View decorView = getWindow().getDecorView();
-            decorView.setSystemUiVisibility(View.SYSTEM_UI_FLAG_VISIBLE | View.SYSTEM_UI_FLAG_LAYOUT_STABLE);
-            decorView.requestApplyInsets();
+        View decorView = getWindow().getDecorView();
+        decorView.setSystemUiVisibility(View.SYSTEM_UI_FLAG_VISIBLE | View.SYSTEM_UI_FLAG_LAYOUT_STABLE);
+        decorView.requestApplyInsets();
 
-        }
     }
 
     public void setSystemUiFloatFullScreen(boolean enable) {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            View decorView = getWindow().getDecorView();
+        View decorView = getWindow().getDecorView();
 //            int option = enable ? (View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN | View.SYSTEM_UI_FLAG_LAYOUT_STABLE)
 //                    : (View.SYSTEM_UI_FLAG_VISIBLE | View.SYSTEM_UI_FLAG_LAYOUT_STABLE|View.SYSTEM_UI_FLAG_VISIBLE);
 
-            int option = decorView.getSystemUiVisibility();
-            if (enable) {
-                option |= View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN;
-            } else {
-                option &= ~View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN;
-            }
-
-            Log.d(">>", "SystemUiVisibility " + decorView.getSystemUiVisibility()+">>"+option);
-            decorView.setSystemUiVisibility(option);
-            decorView.requestApplyInsets();
+        int option = decorView.getSystemUiVisibility();
+        if (enable) {
+            option |= View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN;
+        } else {
+            option &= ~View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN;
         }
+
+        Log.d(">>", "SystemUiVisibility " + decorView.getSystemUiVisibility() + ">>" + option);
+        decorView.setSystemUiVisibility(option);
+        decorView.requestApplyInsets();
     }
 
     private void setPaddingTop(int id) {
