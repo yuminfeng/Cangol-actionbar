@@ -117,16 +117,14 @@ public class ActionBarActivity extends AppCompatActivity {
         getWindow().setStatusBarColor(color);
 
         //设置状态栏颜色后，需要同步设置状态栏文字颜色
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            View decorView = getWindow().getDecorView();
-            int vis = decorView.getSystemUiVisibility();
-            if (isLightColor(color)) {
-                vis |= View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR; //black
-            } else {
-                vis &= ~View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR; //white
-            }
-            decorView.setSystemUiVisibility(vis);
+        View decorView = getWindow().getDecorView();
+        int vis = decorView.getSystemUiVisibility();
+        if (isLightColor(color)) {
+            vis |= View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR; //black
+        } else {
+            vis &= ~View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR; //white
         }
+        decorView.setSystemUiVisibility(vis);
     }
 
     /**
