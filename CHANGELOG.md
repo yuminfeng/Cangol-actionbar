@@ -32,3 +32,8 @@
 
 - remove ScrollingTextView
 - remove SearchView
+-
+
+## 1.2.9
+
+- 设置 minSdkVersion = 23
