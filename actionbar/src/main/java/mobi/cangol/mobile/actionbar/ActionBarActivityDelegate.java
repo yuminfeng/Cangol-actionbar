@@ -26,7 +26,7 @@ public class ActionBarActivityDelegate {
     private View mRootView;
     private ActionBar mActionBar;
     private FrameLayout mContentView;
-//    private boolean mActionbarOverlay = false;
+    private boolean mActionbarOverlay = false;
 
     public ActionBarActivityDelegate(ActionBarActivity activity) {
         mActivity = activity;
@@ -43,19 +43,18 @@ public class ActionBarActivityDelegate {
         return mRootView;
     }
 
-//    public boolean isActionbarOverlay() {
-//        return mActionbarOverlay;
-//    }
+    public boolean isActionbarOverlay() {
+        return mActionbarOverlay;
+    }
 
-//    @Deprecated
-//    public void setActionbarOverlay(boolean mActionbarOverlay) {
-//        this.mActionbarOverlay = mActionbarOverlay;
-//        if (mActionbarOverlay) {
-//            mContentView.setPadding(0, 0, 0, 0);
-//        } else {
-//            mContentView.setPadding(0, (mActivity.getResources().getDimensionPixelSize(R.dimen.actionbar_height)), 0, 0);
-//        }
-//    }
+    public void setActionbarOverlay(boolean mActionbarOverlay) {
+        this.mActionbarOverlay = mActionbarOverlay;
+        if (mActionbarOverlay) {
+            mContentView.setPadding(0, 0, 0, 0);
+        } else {
+            mContentView.setPadding(0, (mActivity.getResources().getDimensionPixelSize(R.dimen.actionbar_height)), 0, 0);
+        }
+    }
 
     public ActionBar getCustomActionBar() {
         return mActionBar;

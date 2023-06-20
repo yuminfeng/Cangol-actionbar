@@ -5,6 +5,11 @@
     android:layout_height="match_parent"
     android:fitsSystemWindows="true">
 
+    <FrameLayout
+        android:id="@+id/actionbar_content_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingTop="@dimen/actionbar_height" />
 
     <mobi.cangol.mobile.actionbar.view.ActionBarView
         android:id="@+id/actionbar_view"
@@ -12,11 +17,5 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/actionbar_height"
         android:layout_alignParentTop="true" />
-
-    <FrameLayout
-        android:id="@+id/actionbar_content_view"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@id/actionbar_view" />
 
 </RelativeLayout>
