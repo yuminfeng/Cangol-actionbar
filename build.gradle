@@ -3,7 +3,7 @@ buildscript {
     ext.min_version = 23
     ext.sdk_version = 31
     ext.target_version = 31
-    ext.build_version = '30.0.3'
+
     repositories {
         maven {
             allowInsecureProtocol = true
