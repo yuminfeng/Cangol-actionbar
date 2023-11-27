@@ -1,5 +1,6 @@
 package mobi.cangol.mobile.actionbar;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.res.TypedArray;
 import android.os.Bundle;
@@ -21,7 +22,7 @@ import mobi.cangol.mobile.actionbar.internal.ActionBarImpl;
  */
 public class ActionBarActivityDelegate {
 
-    private ActionBarActivity mActivity;
+    private final ActionBarActivity mActivity;
     private ViewGroup mContainerView;
     private View mRootView;
     private ActionBar mActionBar;
@@ -94,6 +95,7 @@ public class ActionBarActivityDelegate {
         }
     }
 
+    @SuppressLint("ResourceType")
     private void attachToActivity(Activity activity, View layout) {
         // get the window background
         int background = 0;
@@ -150,8 +152,7 @@ public class ActionBarActivityDelegate {
         View v;
         if (mContainerView != null) {
             v = mContainerView.findViewById(id);
-            if (v != null)
-                return v;
+            return v;
         }
         return null;
     }
