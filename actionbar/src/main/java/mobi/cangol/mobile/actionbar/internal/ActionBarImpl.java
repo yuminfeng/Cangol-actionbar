@@ -19,7 +19,7 @@ import mobi.cangol.mobile.actionbar.view.ActionBarView;
  * @author Cangol
  */
 public final class ActionBarImpl extends ActionBar {
-    private ActionBarView mActionBarView;
+    private final ActionBarView mActionBarView;
 
     public ActionBarImpl(ActionBarView view) {
         this.mActionBarView = view;

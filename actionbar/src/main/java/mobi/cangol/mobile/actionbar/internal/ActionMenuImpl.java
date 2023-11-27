@@ -15,7 +15,7 @@ import mobi.cangol.mobile.actionbar.view.ActionMenuView.OnActionClickListener;
  */
 public final class ActionMenuImpl extends ActionMenu {
     private List<ActionMenuItem> mActions = new ArrayList<>();
-    private ActionMenuView mActionMenuView;
+    private final ActionMenuView mActionMenuView;
 
     public ActionMenuImpl(ActionMenuView view) {
         this.mActionMenuView = view;

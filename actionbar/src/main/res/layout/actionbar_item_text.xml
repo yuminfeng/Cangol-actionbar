@@ -5,5 +5,4 @@
     android:layout_centerVertical="true"
     android:gravity="center"
     android:lines="1"
-    android:visibility="visible"
-    />
+    android:visibility="visible" />

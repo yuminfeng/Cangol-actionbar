@@ -11,7 +11,7 @@ import mobi.cangol.mobile.actionbar.view.ActionModeView;
  * @author Cangol
  */
 public final class ActionModeImpl extends ActionMode {
-    private ActionModeView mActionModeView;
+    private final ActionModeView mActionModeView;
     private ActionMode.Callback mActionModeCallback;
     private boolean mActionMode;
 

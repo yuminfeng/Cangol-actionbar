@@ -27,16 +27,6 @@
         <attr name="actionbar_tab_text" format="reference|color" />
         <attr name="actionbar_tab_text_checked" format="reference|color" />
 
-        <!--actionbar search mode-->
-        <attr name="actionbar_search_text" format="reference|color" />
-        <attr name="actionbar_search_history_text" format="reference|color" />
-        <attr name="actionbar_search_hint" format="reference|color" />
-        <attr name="actionbar_search_background" format="reference|color" />
-        <attr name="actionbar_search_mask_background" format="reference|color" />
-
-        <!--actionbar progress mode-->
-        <attr name="actionbar_progress_background" format="reference|color" />
-
         <!--actionbar action mode-->
         <attr name="actionbar_mode_text" format="reference|color" />
         <attr name="actionbar_mode_bg" format="reference|color" />
@@ -44,9 +34,6 @@
         <attr name="actionbar_mode_split" format="reference|color" />
 
         <attr name="actionbar_item_bg_selector" format="reference" />
-        <attr name="actionbar_menu_item_bg_selector" format="reference" />
-        <attr name="actionbar_mode_bg_selector" format="reference" />
-        <attr name="actionbar_popup_item_bg_selector" format="reference" />
         <attr name="actionbar_tab_bg_selector" format="reference" />
 
         <attr name="actionbar_more" format="reference" />
@@ -57,5 +44,6 @@
         <attr name="actionbar_refresh" format="reference" />
 
         <attr name="actionbar_tab_text_selector" format="reference" />
+
     </declare-styleable>
 </resources>

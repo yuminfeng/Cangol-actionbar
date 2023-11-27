@@ -14,7 +14,7 @@ import mobi.cangol.mobile.actionbar.view.ActionTabView.OnTabSelectedListener;
  * @author Cangol
  */
 public final class ActionTabImpl extends ActionTab {
-    private ActionTabView mActionTabView;
+    private final ActionTabView mActionTabView;
     private List<ActionTabItem> mTabs = new ArrayList<>();
     public ActionTabImpl(ActionTabView view) {
         this.mActionTabView = view;
