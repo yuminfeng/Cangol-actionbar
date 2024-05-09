@@ -1,6 +1,5 @@
 package mobi.cangol.mobile.actionbar.demo;
 
-import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -18,7 +17,6 @@ import java.util.List;
 
 import mobi.cangol.mobile.actionbar.ActionBarActivity;
 
-@SuppressLint("ResourceAsColor")
 public class MainActivity extends ActionBarActivity {
     private ListView mListView;
     private List<Class<? extends Activity>> activities = new ArrayList<>();

@@ -8,9 +8,6 @@ import androidx.annotation.RequiresApi;
 
 import mobi.cangol.mobile.actionbar.ActionBarActivity;
 
-/**
- * Created by xuewu.wei on 2019/5/5.
- */
 public class TransparentActivity extends ActionBarActivity {
 
     @Override
