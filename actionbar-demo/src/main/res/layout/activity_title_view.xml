@@ -16,7 +16,6 @@
         android:text="Left" />
 
     <Button
-        android:id="@+id/button_title_3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="VISIBLE/INVISIBLE" />

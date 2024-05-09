@@ -2,8 +2,7 @@
 <resources>
 
     <string name="app_name">Actionbar</string>
-    <string name="hello_world">Hello world!</string>
-    
+
     <string name="action_delete">Delete</string>
     <string name="action_selectAll">Select All</string>
     <string name="action_invert">Invert</string>
@@ -16,11 +15,4 @@
     <string name="start_refresh">Star</string>
     <string name="stop_refresh">Stop</string>
 
-    <string name="startProgress">startProgress</string>
-    <string name="stopProgress">stopProgress</string>
-    <string name="startSearchMode">startSearchMode</string>
-    <string name="stopSearchMode">stopSearchMode</string>
-    <string name="startCustomActionMode">startCustomActionMode</string>
-    
-     <string name="language">language</string>
 </resources>
