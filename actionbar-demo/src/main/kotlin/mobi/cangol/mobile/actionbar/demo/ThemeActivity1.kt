@@ -5,7 +5,7 @@ import android.util.Log
 import mobi.cangol.mobile.actionbar.ActionBarActivity
 import mobi.cangol.mobile.actionbar.ActionMenu
 
-private var light: Boolean = true
+private var light: Boolean = true //类似java中 static 中的作用
 
 class ThemeActivity1 : ActionBarActivity() {
 
