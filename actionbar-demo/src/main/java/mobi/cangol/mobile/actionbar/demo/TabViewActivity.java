@@ -11,15 +11,16 @@ import mobi.cangol.mobile.actionbar.ActionTab;
 import mobi.cangol.mobile.actionbar.ActionTabItem;
 import mobi.cangol.mobile.actionbar.view.ActionTabView;
 
-public class TabViewActivity extends ActionBarActivity{
+@Deprecated
+public class TabViewActivity extends ActionBarActivity {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tab_view);
-        this.setActionbarShadow(true,3.0f);
+        this.setActionbarShadow(true, 3.0f);
         this.getCustomActionBar().displayUpIndicator();
-        this.setTitle(this.getClass().getSimpleName().replace("Activity",""));
+        this.setTitle(this.getClass().getSimpleName().replace("Activity", ""));
         findViews();
     }
 
@@ -36,24 +37,22 @@ public class TabViewActivity extends ActionBarActivity{
             @Override
             public void onClick(View v) {
                 getCustomActionBar().getActionTab().removeAllTabs();
-                setTitle(TabViewActivity.this.getClass().getSimpleName().replace("Activity",""));
+                setTitle(TabViewActivity.this.getClass().getSimpleName().replace("Activity", ""));
             }
         });
-        getCustomActionBar().getActionTab().setOnTabSelectedListener(new ActionTabView.OnTabSelectedListener() {
-            @Override
-            public boolean onTabSelected(ActionTabItem tab) {
-                switch (tab.getId()) {
-                    case 1:
-                        Toast.makeText(TabViewActivity.this, tab.getText(), Toast.LENGTH_SHORT).show();
-                        break;
-                    case 2:
-                        Toast.makeText(TabViewActivity.this, tab.getText(), Toast.LENGTH_SHORT).show();
-                        break;
-                }
-                return false;
+        getCustomActionBar().getActionTab().setOnTabSelectedListener(tab -> {
+            switch (tab.getId()) {
+                case 1:
+                    Toast.makeText(TabViewActivity.this, tab.getText(), Toast.LENGTH_SHORT).show();
+                    break;
+                case 2:
+                    Toast.makeText(TabViewActivity.this, tab.getText(), Toast.LENGTH_SHORT).show();
+                    break;
             }
+            return false;
         });
     }
+
     public void initActionTab() {
         ActionTab actionTab = this.getCustomActionBar().getActionTab();
         actionTab.newTab(1, "推荐", 1);
