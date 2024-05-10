@@ -9,6 +9,7 @@ import android.widget.Toast;
 
 import mobi.cangol.mobile.actionbar.ActionBarActivity;
 
+@Deprecated
 public class TitleActivity extends ActionBarActivity {
 
     @Override

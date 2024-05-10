@@ -10,12 +10,13 @@ import mobi.cangol.mobile.actionbar.ActionBarActivity;
 import mobi.cangol.mobile.actionbar.ActionMenu;
 import mobi.cangol.mobile.actionbar.ActionTab;
 
+@Deprecated
 public class ThemeActivity extends ActionBarActivity {
     private static boolean light = true;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
-        Log.d("MainActivity", "light==" + light);
+        Log.d("ThemeActivity", "light==" + light);
         if (light) {
             setTheme(R.style.AppTheme1);
         } else {

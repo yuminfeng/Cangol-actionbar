@@ -21,7 +21,7 @@ class TitleActivity1 : ActionBarActivity() {
             customActionBar.titleGravity = Gravity.CENTER
         }
         findViewById(R.id.button_title_2).setOnClickListener {
-            customActionBar.titleGravity = Gravity.LEFT or Gravity.CENTER_VERTICAL
+            customActionBar.titleGravity = Gravity.START or Gravity.CENTER_VERTICAL
         }
         findViewById(R.id.button_title_3).setOnClickListener {
             if (customActionBar.titleVisibility == View.VISIBLE) {

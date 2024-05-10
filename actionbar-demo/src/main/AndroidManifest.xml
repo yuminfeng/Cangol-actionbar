@@ -40,7 +40,7 @@
             android:name=".TitleActivity1"
             android:configChanges="layoutDirection|locale" />
         <activity
-            android:name=".ThemeActivity"
+            android:name=".ThemeActivity1"
             android:configChanges="layoutDirection|locale" />
         <activity
             android:name=".TransparentActivity"
