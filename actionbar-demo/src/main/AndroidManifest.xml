@@ -25,7 +25,7 @@
             android:name=".TabViewActivity1"
             android:configChanges="layoutDirection|locale" />
         <activity
-            android:name=".NavViewActivity"
+            android:name=".NavViewActivity1"
             android:configChanges="layoutDirection|locale" />
         <activity
             android:name=".MenuActivity"
