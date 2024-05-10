@@ -19,7 +19,7 @@
             android:name=".ActionModeActivity"
             android:configChanges="layoutDirection|locale" />
         <activity
-            android:name=".RefreshActivity"
+            android:name=".RefreshActivity1"
             android:configChanges="layoutDirection|locale" />
         <activity
             android:name=".TabViewActivity1"
