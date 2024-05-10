@@ -5,18 +5,17 @@ import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.widget.Toast;
 
 import mobi.cangol.mobile.actionbar.ActionBarActivity;
 
-public class LeftMenuActivity extends ActionBarActivity{
+public class LeftMenuActivity extends ActionBarActivity {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_left_menu);
         this.getCustomActionBar().displayUpIndicator();
-        this.setTitle(this.getClass().getSimpleName().replace("Activity",""));
+        this.setTitle(this.getClass().getSimpleName().replace("Activity", ""));
         findViews();
     }
 
@@ -53,11 +52,4 @@ public class LeftMenuActivity extends ActionBarActivity{
         });
     }
 
-    private void showToast(String string) {
-        Toast.makeText(this, string, Toast.LENGTH_SHORT).show();
-    }
-
-    private void showToast(int id) {
-        Toast.makeText(this, id, Toast.LENGTH_SHORT).show();
-    }
 }

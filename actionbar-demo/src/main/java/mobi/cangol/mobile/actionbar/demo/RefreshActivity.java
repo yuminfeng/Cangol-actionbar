@@ -31,8 +31,6 @@ public class RefreshActivity extends ActionBarActivity{
     public void onMenuActionCreated(ActionMenu actionMenu) {
         super.onMenuActionCreated(actionMenu);
         actionMenu.addMenu(1, R.string.action_delete, -1, 1);
-//        actionMenu.addMenu(2, R.string.action_selectAll, R.drawable.ic_action_select, 1);
-//        actionMenu.addMenu(3, R.string.action_invert, R.drawable.ic_action_unselect, 0);
     }
 
     @Override

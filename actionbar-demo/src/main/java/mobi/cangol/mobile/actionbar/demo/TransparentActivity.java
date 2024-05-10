@@ -4,8 +4,6 @@ import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 
-import androidx.annotation.RequiresApi;
-
 import mobi.cangol.mobile.actionbar.ActionBarActivity;
 
 public class TransparentActivity extends ActionBarActivity {
@@ -21,9 +19,7 @@ public class TransparentActivity extends ActionBarActivity {
     }
 
     public void findViews() {
-//        setActionbarOverlay(true);
         this.findViewById(R.id.button_transparent_0).setOnClickListener(new View.OnClickListener() {
-            @RequiresApi(api = Build.VERSION_CODES.M)
             @Override
             public void onClick(View v) {
                 setSystemUiFloatFullScreen(false);
@@ -49,14 +45,12 @@ public class TransparentActivity extends ActionBarActivity {
         this.findViewById(R.id.button_transparent_11).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //setStatusBarTintColor(getResources().getColor(R.color.translucent));
                 getCustomActionBar().setBackgroundResource(R.color.translucent);
             }
         });
         this.findViewById(R.id.button_transparent_12).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //setStatusBarTintColor(getResources().getColor(R.color.transparent));
                 getCustomActionBar().setBackgroundResource(R.color.transparent);
             }
         });
