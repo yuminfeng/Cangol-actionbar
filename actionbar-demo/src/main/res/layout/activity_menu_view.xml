@@ -5,7 +5,7 @@
     android:orientation="vertical">
 
     <Button
-        android:id="@+id/button_menu_1"
+        android:id="@+id/button_menu_view_1"
         android:layout_width="wrap_content"
         android:layout_height="80dp"
         android:text="全屏" />
@@ -16,49 +16,49 @@
         android:background="@android:color/holo_red_dark" />
 
     <Button
-        android:id="@+id/button_menu_2"
+        android:id="@+id/button_menu_view_2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="显示/隐藏" />
 
     <Button
-        android:id="@+id/button_menu_4"
+        android:id="@+id/button_menu_view_4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="显示Home" />
 
     <Button
-        android:id="@+id/button_menu_6"
+        android:id="@+id/button_menu_view_6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="setWindowBackground" />
 
     <Button
-        android:id="@+id/button_menu_7"
+        android:id="@+id/button_menu_view_7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="setBackgroundResource" />
 
     <Button
-        android:id="@+id/button_menu_8"
+        android:id="@+id/button_menu_view_8"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="setStatusBarTintColor" />
 
     <Button
-        android:id="@+id/button_menu_9"
+        android:id="@+id/button_menu_view_9"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="setNavigationBarTintColor" />
 
     <Button
-        android:id="@+id/button_menu_10"
+        android:id="@+id/button_menu_view_10"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="ActionBar setBackgroundResource" />
 
     <Button
-        android:id="@+id/button_menu_11"
+        android:id="@+id/button_menu_view_11"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="left menu" />

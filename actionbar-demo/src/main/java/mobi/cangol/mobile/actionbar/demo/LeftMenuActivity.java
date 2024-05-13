@@ -27,13 +27,13 @@ public class LeftMenuActivity extends ActionBarActivity {
                 getCustomActionBar().setDisplayShowHomeEnabled(true);
             }
         });
-        this.findViewById(R.id.button_menu_1).setOnClickListener(new OnClickListener() {
+        this.findViewById(R.id.button_menu_view_1).setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
                 getCustomActionBar().setDisplayShowHomeEnabled(false);
             }
         });
-        this.findViewById(R.id.button_menu_2).setOnClickListener(new OnClickListener() {
+        this.findViewById(R.id.button_menu_view_2).setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
                 getCustomActionBar().setLeftMenu(0x11, R.string.action_setting, R.drawable.actionbar_clear_dark, new OnClickListener() {

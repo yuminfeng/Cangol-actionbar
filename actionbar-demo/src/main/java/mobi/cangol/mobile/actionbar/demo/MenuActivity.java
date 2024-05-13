@@ -11,6 +11,7 @@ import mobi.cangol.mobile.actionbar.ActionBarActivity;
 import mobi.cangol.mobile.actionbar.ActionMenu;
 import mobi.cangol.mobile.actionbar.ActionMenuItem;
 
+@Deprecated
 public class MenuActivity extends ActionBarActivity {
 
     @Override
@@ -24,7 +25,7 @@ public class MenuActivity extends ActionBarActivity {
     }
 
     public void findViews() {
-        this.findViewById(R.id.button_menu_1).setOnClickListener(new OnClickListener() {
+        this.findViewById(R.id.button_menu_view_1).setOnClickListener(new OnClickListener() {
             boolean fullScreen;
 
             @Override
@@ -39,14 +40,14 @@ public class MenuActivity extends ActionBarActivity {
 
             }
         });
-        this.findViewById(R.id.button_menu_2).setOnClickListener(new OnClickListener() {
+        this.findViewById(R.id.button_menu_view_2).setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
                 setActionbarShow(!isActionbarShow());
             }
         });
 
-        this.findViewById(R.id.button_menu_4).setOnClickListener(new OnClickListener() {
+        this.findViewById(R.id.button_menu_view_4).setOnClickListener(new OnClickListener() {
             boolean displayHome = true;
 
             @Override
@@ -60,38 +61,38 @@ public class MenuActivity extends ActionBarActivity {
                 }
             }
         });
-        this.findViewById(R.id.button_menu_6).setOnClickListener(new OnClickListener() {
+        this.findViewById(R.id.button_menu_view_6).setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
                 setWindowBackground(R.color.red);
             }
         });
-        this.findViewById(R.id.button_menu_7).setOnClickListener(new OnClickListener() {
+        this.findViewById(R.id.button_menu_view_7).setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
                 setBackgroundResource(R.color.blue);
             }
         });
-        this.findViewById(R.id.button_menu_8).setOnClickListener(new OnClickListener() {
+        this.findViewById(R.id.button_menu_view_8).setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
                 setStatusBarTintColor(getResources().getColor(R.color.blue));
             }
         });
-        this.findViewById(R.id.button_menu_9).setOnClickListener(new OnClickListener() {
+        this.findViewById(R.id.button_menu_view_9).setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
                 setNavigationBarTintColor(getResources().getColor(R.color.red));
             }
         });
-        this.findViewById(R.id.button_menu_10).setOnClickListener(new OnClickListener() {
+        this.findViewById(R.id.button_menu_view_10).setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
                 getCustomActionBar().setBackgroundResource(R.color.blue);
             }
         });
 
-        this.findViewById(R.id.button_menu_11).setOnClickListener(new OnClickListener() {
+        this.findViewById(R.id.button_menu_view_11).setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
                 getCustomActionBar().setLeftMenu(0x11, R.string.action_setting, -1, new OnClickListener() {

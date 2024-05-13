@@ -43,7 +43,7 @@ public class MainActivity extends ActionBarActivity {
         activities.add(RefreshActivity1.class);
         activities.add(TabViewActivity1.class);
         activities.add(NavViewActivity1.class);
-        activities.add(MenuActivity.class);
+        activities.add(MenuActivity1.class);
         activities.add(CustomViewActivity.class);
         activities.add(LeftMenuActivity.class);
         activities.add(TitleActivity1.class);
