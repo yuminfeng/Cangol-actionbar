@@ -7,7 +7,7 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme1">
         <activity
-            android:name=".MainActivity"
+            android:name=".MainActivity1"
             android:configChanges="layoutDirection|locale"
             android:exported="true">
             <intent-filter>
