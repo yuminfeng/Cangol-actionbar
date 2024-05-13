@@ -2,6 +2,7 @@
 package mobi.cangol.mobile.actionbar.demo;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -27,16 +28,16 @@ public class LeftMenuActivity extends ActionBarActivity {
                 getCustomActionBar().setDisplayShowHomeEnabled(true);
             }
         });
-        this.findViewById(R.id.button_menu_view_1).setOnClickListener(new OnClickListener() {
+        this.findViewById(R.id.button_menu_1).setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
                 getCustomActionBar().setDisplayShowHomeEnabled(false);
             }
         });
-        this.findViewById(R.id.button_menu_view_2).setOnClickListener(new OnClickListener() {
+        this.findViewById(R.id.button_menu_2).setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                getCustomActionBar().setLeftMenu(0x11, R.string.action_setting, R.drawable.actionbar_clear_dark, new OnClickListener() {
+                getCustomActionBar().setLeftMenu(0x11, R.string.action_setting, R.drawable.actionbar_clear_light, new OnClickListener() {
                     @Override
                     public void onClick(View v) {
 
