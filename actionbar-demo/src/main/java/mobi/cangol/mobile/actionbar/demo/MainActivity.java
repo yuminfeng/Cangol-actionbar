@@ -17,6 +17,7 @@ import java.util.List;
 
 import mobi.cangol.mobile.actionbar.ActionBarActivity;
 
+@Deprecated
 public class MainActivity extends ActionBarActivity {
     private ListView mListView;
     private List<Class<? extends Activity>> activities = new ArrayList<>();
