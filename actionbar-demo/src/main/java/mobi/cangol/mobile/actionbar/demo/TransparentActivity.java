@@ -6,6 +6,7 @@ import android.view.View;
 
 import mobi.cangol.mobile.actionbar.ActionBarActivity;
 
+@Deprecated
 public class TransparentActivity extends ActionBarActivity {
 
     @Override

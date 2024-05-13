@@ -43,7 +43,7 @@
             android:name=".ThemeActivity1"
             android:configChanges="layoutDirection|locale" />
         <activity
-            android:name=".TransparentActivity"
+            android:name=".TransparentActivity1"
             android:configChanges="layoutDirection|locale" />
     </application>
 
