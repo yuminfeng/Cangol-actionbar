@@ -86,8 +86,8 @@ class MenuActivity1 : ActionBarActivity() {
         return super.onMenuActionSelected(actionMenu)
     }
 
-    private fun showToast(string: String) {
-        Toast.makeText(this, string, Toast.LENGTH_SHORT).show()
+    private fun showToast(str: String) {
+        Toast.makeText(this, str, Toast.LENGTH_SHORT).show()
     }
 
     private fun showToast(id: Int) {
