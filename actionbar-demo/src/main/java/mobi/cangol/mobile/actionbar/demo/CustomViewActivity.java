@@ -8,6 +8,7 @@ import android.widget.EditText;
 
 import mobi.cangol.mobile.actionbar.ActionBarActivity;
 
+@Deprecated
 public class CustomViewActivity extends ActionBarActivity{
 
     @Override
