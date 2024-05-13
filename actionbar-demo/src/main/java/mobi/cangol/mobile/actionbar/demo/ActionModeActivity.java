@@ -10,6 +10,7 @@ import mobi.cangol.mobile.actionbar.ActionMenu;
 import mobi.cangol.mobile.actionbar.ActionMenuItem;
 import mobi.cangol.mobile.actionbar.ActionMode;
 
+@Deprecated
 public class ActionModeActivity extends ActionBarActivity {
 
     @Override
@@ -17,7 +18,7 @@ public class ActionModeActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_action_mode);
         this.getCustomActionBar().displayUpIndicator();
-        this.setTitle(this.getClass().getSimpleName().replace("Activity",""));
+        this.setTitle(this.getClass().getSimpleName().replace("Activity", ""));
         findViews();
     }
 

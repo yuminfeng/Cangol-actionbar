@@ -16,7 +16,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ActionModeActivity"
+            android:name=".ActionModeActivity1"
             android:configChanges="layoutDirection|locale" />
         <activity
             android:name=".RefreshActivity1"

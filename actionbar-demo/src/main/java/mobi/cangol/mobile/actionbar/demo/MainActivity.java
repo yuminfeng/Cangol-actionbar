@@ -39,7 +39,7 @@ public class MainActivity extends ActionBarActivity {
         this.setActionbarShadow(true, 8);
         this.getCustomActionBar().setBackgroundResource(R.color.red);
 
-        activities.add(ActionModeActivity.class);
+        activities.add(ActionModeActivity1.class);
         activities.add(RefreshActivity1.class);
         activities.add(TabViewActivity1.class);
         activities.add(NavViewActivity1.class);
