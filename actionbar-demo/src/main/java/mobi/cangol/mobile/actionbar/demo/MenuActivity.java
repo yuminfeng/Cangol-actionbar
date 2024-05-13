@@ -46,13 +46,6 @@ public class MenuActivity extends ActionBarActivity {
             }
         });
 
-        this.findViewById(R.id.button_menu_3).setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View v) {
-//                setActionbarOverlay(!isActionbarOverlay());
-            }
-        });
-
         this.findViewById(R.id.button_menu_4).setOnClickListener(new OnClickListener() {
             boolean displayHome = true;
 

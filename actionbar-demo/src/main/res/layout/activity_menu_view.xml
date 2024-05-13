@@ -22,12 +22,6 @@
         android:text="显示/隐藏" />
 
     <Button
-        android:id="@+id/button_menu_3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="悬浮" />
-
-    <Button
         android:id="@+id/button_menu_4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
