@@ -9,6 +9,7 @@ import android.view.View.OnClickListener;
 
 import mobi.cangol.mobile.actionbar.ActionBarActivity;
 
+@Deprecated
 public class LeftMenuActivity extends ActionBarActivity {
 
     @Override
