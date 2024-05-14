@@ -60,7 +60,7 @@ public class ActionTabView extends RadioGroup implements OnCheckedChangeListener
     private View inflateTabItem(ActionTabItem tabItem) {
         View view = mInflater.inflate(R.layout.actionbar_tab_item, this, false);
 
-        RadioButton labelView = (RadioButton) view.findViewById(R.id.actionbar_tab_item);
+        RadioButton labelView = view.findViewById(R.id.actionbar_tab_item);
         labelView.setId(tabItem.getId());
         labelView.setText(tabItem.getText());
         labelView.setChecked(1 == tabItem.getSelected());

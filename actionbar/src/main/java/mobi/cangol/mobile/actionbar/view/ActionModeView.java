@@ -53,9 +53,9 @@ public class ActionModeView extends LinearLayout {
         LayoutInflater mInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         mInflater.inflate(R.layout.actionbar_action_mode, this);
 
-        mActionMenu = new ActionMenuImpl((ActionMenuView) this.findViewById(R.id.actionbar_mode_menu));
-        ImageView mDoneButton = (ImageView) this.findViewById(R.id.actionbar_mode_done);
-        mTitleText = (TextView) this.findViewById(R.id.actionbar_mode_title);
+        mActionMenu = new ActionMenuImpl(this.findViewById(R.id.actionbar_mode_menu));
+        ImageView mDoneButton = this.findViewById(R.id.actionbar_mode_done);
+        mTitleText = this.findViewById(R.id.actionbar_mode_title);
 
         mDoneButton.setOnClickListener(new OnClickListener() {
 

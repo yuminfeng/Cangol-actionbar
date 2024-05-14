@@ -100,14 +100,14 @@ public class ActionBarView extends RelativeLayout {
 
 
         mInflater.inflate(R.layout.actionbar_layout, this, true);
-        mLeftMenuLayout = (LinearLayout) this.findViewById(R.id.actionbar_left_menus);
-        mIndicator = (ImageView) this.findViewById(R.id.actionbar_main_indicator);
-        mTitleLayout = (LinearLayout) this.findViewById(R.id.actionbar_main_title_layout);
-        mTitleView = (TextView) this.findViewById(R.id.actionbar_main_title);
-        mCustomLayout = (FrameLayout) this.findViewById(R.id.actionbar_main_custom_layout);
-        mActionTab = new ActionTabImpl((ActionTabView) this.findViewById(R.id.actionbar_main_tabview));
-        mActionMenu = new ActionMenuImpl((ActionMenuView) this.findViewById(R.id.actionbar_main_menu));
-        mActionMode = new ActionModeImpl((ActionModeView) this.findViewById(R.id.actionbar_main_mode));
+        mLeftMenuLayout = this.findViewById(R.id.actionbar_left_menus);
+        mIndicator = this.findViewById(R.id.actionbar_main_indicator);
+        mTitleLayout = this.findViewById(R.id.actionbar_main_title_layout);
+        mTitleView = this.findViewById(R.id.actionbar_main_title);
+        mCustomLayout = this.findViewById(R.id.actionbar_main_custom_layout);
+        mActionTab = new ActionTabImpl(this.findViewById(R.id.actionbar_main_tabview));
+        mActionMenu = new ActionMenuImpl(this.findViewById(R.id.actionbar_main_menu));
+        mActionMode = new ActionModeImpl(this.findViewById(R.id.actionbar_main_mode));
         setTitle(context.getApplicationInfo().name);
         initListeners();
     }
@@ -181,7 +181,7 @@ public class ActionBarView extends RelativeLayout {
                 if (convertView == null) {
                     convertView = mInflater.inflate(R.layout.actionbar_navigation_list_item, parent, false);
                     holder = new ViewHolder();
-                    holder.labelView = (TextView) convertView.findViewById(R.id.actionbar_navigation_item_text);
+                    holder.labelView = convertView.findViewById(R.id.actionbar_navigation_item_text);
                     convertView.setTag(holder);
                 } else {
                     holder = (ViewHolder) convertView.getTag();
@@ -200,7 +200,7 @@ public class ActionBarView extends RelativeLayout {
 
     private void initNavigationPopupMenu(final Context context, BaseAdapter adapter, final OnNavigationListener onNavigationListener) {
         final View popuLayout = mInflater.inflate(R.layout.actionbar_navigation_list, null);
-        ListView listView = (ListView) popuLayout.findViewById(R.id.actionbar_popup_navigation_list);
+        ListView listView = popuLayout.findViewById(R.id.actionbar_popup_navigation_list);
         listView.setAdapter(adapter);
         final int width = (int) (200 * context.getResources().getDisplayMetrics().density);
         mPopupMenu = new PopupWindow(popuLayout, width, LayoutParams.WRAP_CONTENT, true);
@@ -341,7 +341,7 @@ public class ActionBarView extends RelativeLayout {
         if (drawable != -1) {
             final View view = mInflater.inflate(R.layout.actionbar_item_icon, null, false);
 
-            ImageView labelView = (ImageView) view.findViewById(R.id.actionbar_item);
+            ImageView labelView = view.findViewById(R.id.actionbar_item);
             labelView.setImageResource(drawable);
             view.setId(id);
             view.setTag(getContext().getString(text));
@@ -364,7 +364,7 @@ public class ActionBarView extends RelativeLayout {
         } else {
             final View view = mInflater.inflate(R.layout.actionbar_item_text, null, false);
 
-            TextView labelView = (TextView) view.findViewById(R.id.actionbar_item);
+            TextView labelView = view.findViewById(R.id.actionbar_item);
             labelView.setText(text);
             view.setId(id);
             view.setTag(getContext().getString(text));
@@ -530,7 +530,7 @@ public class ActionBarView extends RelativeLayout {
             }
             mRefreshView = null;
         }
-        mRefreshView = (ImageView) this.findViewById(gravity == Gravity.LEFT ? R.id.actionbar_main_refresh_left : R.id.actionbar_main_refresh_right);
+        mRefreshView = this.findViewById(gravity == Gravity.LEFT ? R.id.actionbar_main_refresh_left : R.id.actionbar_main_refresh_right);
         View view = findViewById(gravity == Gravity.LEFT ? R.id.actionbar_left_menus : R.id.actionbar_main_menu);
         RelativeLayout.LayoutParams layoutParams = (LayoutParams) view.getLayoutParams();
         if (enable) {
