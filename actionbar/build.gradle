@@ -11,7 +11,7 @@ dependencies {
 
 android {
 
-    compileSdkVersion Integer.decode("$sdk_version")
+    compileSdk Integer.decode("$sdk_version")
     defaultConfig {
         minSdkVersion Integer.decode("$min_version")
         targetSdkVersion Integer.decode("$target_version")
@@ -21,10 +21,10 @@ android {
     lintOptions {
         abortOnError false
     }
-    compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
-    }
+//    compileOptions {
+//        sourceCompatibility JavaVersion.VERSION_1_8
+//        targetCompatibility JavaVersion.VERSION_1_8
+//    }
     buildTypes {
         debug {
             testCoverageEnabled true
