@@ -10,7 +10,6 @@ class TransparentActivity1 : ActionBarActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_transparent_view)
         customActionBar.displayUpIndicator()
-        setActionbarShadow(true, 9f)
         title = this@TransparentActivity1.javaClass.simpleName.replace("Activity", "")
         initView()
     }

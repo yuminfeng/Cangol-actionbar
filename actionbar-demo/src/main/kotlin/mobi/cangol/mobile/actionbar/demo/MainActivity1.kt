@@ -30,7 +30,6 @@ class MainActivity1 : ActionBarActivity() {
         setWindowBackground(R.drawable.ic_bg)
         customActionBar.setDisplayShowHomeEnabled(true)
         customActionBar.setBackgroundResource(R.color.red)
-        setActionbarShadow(true, 8f)
 
         activities.add(ActionModeActivity1::class.java)
         activities.add(RefreshActivity1::class.java)

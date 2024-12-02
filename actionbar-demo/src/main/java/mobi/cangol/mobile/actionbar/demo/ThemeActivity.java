@@ -24,7 +24,6 @@ public class ThemeActivity extends ActionBarActivity {
         }
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_theme);
-        this.setActionbarShadow(true);
         this.getCustomActionBar().displayUpIndicator();
         this.setTitle(this.getClass().getSimpleName().replace("Activity", ""));
         findViews();

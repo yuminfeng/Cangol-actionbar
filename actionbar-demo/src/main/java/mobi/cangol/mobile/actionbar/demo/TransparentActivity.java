@@ -14,7 +14,6 @@ public class TransparentActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_transparent_view);
         this.getCustomActionBar().displayUpIndicator();
-        this.setActionbarShadow(true, 9);
         this.setTitle(this.getClass().getSimpleName().replace("Activity", ""));
         findViews();
     }

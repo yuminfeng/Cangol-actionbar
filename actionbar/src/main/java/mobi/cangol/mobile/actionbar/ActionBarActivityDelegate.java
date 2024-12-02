@@ -188,20 +188,4 @@ public class ActionBarActivityDelegate {
         mActionBar.setShow(show);
     }
 
-    public void setActionbarShadow(boolean shadow) {
-        if (shadow) {
-            mContainerView.findViewById(R.id.actionbar_view).setElevation(1.5f * mActivity.getResources().getDisplayMetrics().density);
-        } else {
-            mContainerView.findViewById(R.id.actionbar_view).setElevation(0);
-        }
-    }
-
-    public void setActionbarShadow(boolean shadow, float elevation) {
-        if (shadow) {
-            mContainerView.findViewById(R.id.actionbar_view).setElevation(elevation * mActivity.getResources().getDisplayMetrics().density);
-        } else {
-            mContainerView.findViewById(R.id.actionbar_view).setElevation(elevation);
-        }
-    }
-
 }

@@ -9,7 +9,6 @@ class TabViewActivity1 : ActionBarActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_tab_view)
-        setActionbarShadow(true, 3.0f)
         customActionBar.displayUpIndicator()
         title = localClassName.replace("Activity", "")
         initViews()

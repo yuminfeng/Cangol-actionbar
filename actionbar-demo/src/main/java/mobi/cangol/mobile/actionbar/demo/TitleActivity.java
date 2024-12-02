@@ -47,14 +47,12 @@ public class TitleActivity extends ActionBarActivity {
         this.findViewById(R.id.button_shadwow_1).setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                setActionbarShadow(true);
                 setShadow(findViewById(R.id.image), true);
             }
         });
         this.findViewById(R.id.button_shadwow_2).setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                setActionbarShadow(false);
                 setShadow(findViewById(R.id.image), false);
             }
         });

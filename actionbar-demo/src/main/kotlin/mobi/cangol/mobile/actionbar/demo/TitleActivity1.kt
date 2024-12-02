@@ -31,11 +31,9 @@ class TitleActivity1 : ActionBarActivity() {
             }
         }
         findViewById(R.id.button_shadwow_1).setOnClickListener {
-            setActionbarShadow(true)
             setShadow(findViewById(R.id.image), true)
         }
         findViewById(R.id.button_shadwow_2).setOnClickListener {
-            setActionbarShadow(false)
             setShadow(findViewById(R.id.image), false)
         }
         //设置标题点击事件

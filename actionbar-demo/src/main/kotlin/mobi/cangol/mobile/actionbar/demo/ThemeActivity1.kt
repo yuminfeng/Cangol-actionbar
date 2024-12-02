@@ -15,7 +15,6 @@ class ThemeActivity1 : ActionBarActivity() {
         else setTheme(R.style.AppTheme2)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_theme)
-        setActionbarShadow(true)
         customActionBar.displayUpIndicator()
         title = localClassName.replace("Activity", "")
         initViews()

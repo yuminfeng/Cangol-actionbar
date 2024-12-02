@@ -359,23 +359,4 @@ public class ActionBarActivity extends AppCompatActivity {
         if (b) return b;
         return super.onKeyUp(keyCode, event);
     }
-
-    /**
-     * 设置阴影
-     *
-     * @param shadow 是否阴影
-     */
-    public void setActionbarShadow(boolean shadow) {
-        mDelegate.setActionbarShadow(shadow);
-    }
-
-    /**
-     * 设置阴影
-     *
-     * @param shadow    是否阴影
-     * @param elevation 阴影半径
-     */
-    public void setActionbarShadow(boolean shadow, float elevation) {
-        mDelegate.setActionbarShadow(shadow, elevation);
-    }
 }
