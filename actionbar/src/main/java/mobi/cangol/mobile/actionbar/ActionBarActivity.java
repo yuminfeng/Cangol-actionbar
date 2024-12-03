@@ -106,6 +106,11 @@ public class ActionBarActivity extends AppCompatActivity {
         this.getWindow().setBackgroundDrawableResource(resId);
     }
 
+    public void setStatusBarTransparent() {
+        getWindow().setStatusBarColor(Color.TRANSPARENT);
+        setSystemUiFloatFullScreen(true);
+    }
+
     /**
      * 设置状态栏背景颜色
      *
