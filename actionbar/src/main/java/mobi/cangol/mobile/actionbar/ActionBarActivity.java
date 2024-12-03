@@ -107,7 +107,7 @@ public class ActionBarActivity extends AppCompatActivity {
     }
 
     /**
-     * 设置状态栏颜色
+     * 设置状态栏背景颜色
      *
      * @param color 颜色
      */
@@ -137,16 +137,31 @@ public class ActionBarActivity extends AppCompatActivity {
         return ColorUtils.calculateLuminance(color) >= 0.5;
     }
 
-    public void setStatusBarTranslucent() {
-        getWindow().setStatusBarColor(Color.parseColor("#1f000000"));
-        setSystemUiFloatFullScreen(true);
+    /**
+     * 设置状态栏文本颜色(黑白)
+     *
+     * @param light
+     */
+    private void setStatusBarTextColor(boolean light) {
+        View decorView = getWindow().getDecorView();
+        int vis = decorView.getSystemUiVisibility();
+        if (light) {
+            vis |= View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR; //black
+        } else {
+            vis &= ~View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR; //white
+        }
+        decorView.setSystemUiVisibility(vis);
     }
 
-    public void setStatusBarTransparent() {
-        getWindow().setStatusBarColor(Color.TRANSPARENT);
-        setSystemUiFloatFullScreen(true);
+    /**
+     * 全屏幕显示内容，(包)不包含ActionBar，显示系统状态栏
+     *
+     * @param enable
+     */
+    public void setSystemUiFloatFullScreenNoActionBar(boolean enable) {
+        setActionbarShow(!enable);
+        setSystemUiFloatFullScreen(enable);
     }
-
 
     public void setSystemUiFloatFullScreen(boolean enable) {
         if (enable) {
