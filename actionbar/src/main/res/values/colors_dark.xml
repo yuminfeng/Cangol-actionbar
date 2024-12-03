@@ -25,10 +25,4 @@
     <color name="actionbar_tab_text_dark">#aaa</color>
     <color name="actionbar_tab_text_checked_dark">@color/actionbar_title_dark</color>
 
-    <!--actionbar action mode-->
-    <color name="actionbar_mode_text_dark">#333333</color>
-    <color name="actionbar_mode_bg_dark">#F2F2F2</color>
-    <color name="actionbar_mode_bottom_line_dark">@color/actionbar_background_dark</color>
-    <color name="actionbar_mode_split_dark">#aaa</color>
-
 </resources>

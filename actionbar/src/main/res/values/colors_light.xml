@@ -25,9 +25,4 @@
     <color name="actionbar_tab_text_light">#aaa</color>
     <color name="actionbar_tab_text_checked_light">@color/actionbar_title_light</color>
 
-    <!--actionbar action mode-->
-    <color name="actionbar_mode_text_light">#444444</color>
-    <color name="actionbar_mode_bg_light">#F8f8F8</color>
-    <color name="actionbar_mode_bottom_line_light">#eee</color>
-    <color name="actionbar_mode_split_light">#aaa</color>>
 </resources>

@@ -28,11 +28,6 @@
         <attr name="actionbar_tab_text_checked" format="reference|color" />
 
         <!--actionbar action mode-->
-        <attr name="actionbar_mode_text" format="reference|color" />
-        <attr name="actionbar_mode_bg" format="reference|color" />
-        <attr name="actionbar_mode_bottom_line" format="reference|color" />
-        <attr name="actionbar_mode_split" format="reference|color" />
-
         <attr name="actionbar_item_bg_selector" format="reference" />
         <attr name="actionbar_tab_bg_selector" format="reference" />
 

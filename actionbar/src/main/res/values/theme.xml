@@ -28,13 +28,7 @@
         <item name="actionbar_tab_text">@color/actionbar_tab_text_light</item>
         <item name="actionbar_tab_text_checked">@color/actionbar_tab_text_checked_light</item>
 
-        <!--actionbar action mode-->
-        <item name="actionbar_mode_text">@color/actionbar_mode_text_light</item>
-        <item name="actionbar_mode_bg">@color/actionbar_mode_bg_light</item>
-        <item name="actionbar_mode_bottom_line">@color/actionbar_mode_bottom_line_light</item>
-        <item name="actionbar_mode_split">@color/actionbar_mode_split_light</item>
         <item name="actionbar_item_bg_selector">@drawable/actionbar_item_bg_light</item>
-
         <item name="actionbar_tab_bg_selector">@drawable/actionbar_tab_bg_light</item>
 
         <item name="actionbar_more">@drawable/actionbar_more_light</item>
@@ -74,12 +68,6 @@
         <item name="actionbar_tab_line">@color/actionbar_tab_line_dark</item>
         <item name="actionbar_tab_text">@color/actionbar_tab_text_dark</item>
         <item name="actionbar_tab_text_checked">@color/actionbar_tab_text_checked_dark</item>
-
-        <!--actionbar action mode-->
-        <item name="actionbar_mode_text">@color/actionbar_mode_text_dark</item>
-        <item name="actionbar_mode_bg">@color/actionbar_mode_bg_dark</item>
-        <item name="actionbar_mode_bottom_line">@color/actionbar_mode_bottom_line_dark</item>
-        <item name="actionbar_mode_split">@color/actionbar_mode_split_dark</item>
 
         <item name="actionbar_item_bg_selector">@drawable/actionbar_item_bg_dark</item>
         <item name="actionbar_tab_bg_selector">@drawable/actionbar_tab_bg_dark</item>
