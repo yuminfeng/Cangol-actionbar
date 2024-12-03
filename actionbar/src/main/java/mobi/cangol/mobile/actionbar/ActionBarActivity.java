@@ -132,6 +132,22 @@ public class ActionBarActivity extends AppCompatActivity {
         decorView.setSystemUiVisibility(vis);
     }
 
+    public void setStatusBarTintColor(int color, boolean light) {
+        getWindow().clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+        getWindow().setStatusBarColor(color);
+
+        //设置状态栏颜色后，需要同步设置状态栏文字颜色
+        View decorView = getWindow().getDecorView();
+        int vis = decorView.getSystemUiVisibility();
+        if (light) {
+            vis |= View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR; //black
+        } else {
+            vis &= ~View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR; //white
+        }
+        decorView.setSystemUiVisibility(vis);
+    }
+
     /**
      * calculate the color is light or dark.
      *
