@@ -147,7 +147,7 @@ public class ActionBarActivity extends AppCompatActivity {
      *
      * @param light
      */
-    private void setStatusBarTextColor(boolean light) {
+    public void setStatusBarTextColor(boolean light) {
         View decorView = getWindow().getDecorView();
         int vis = decorView.getSystemUiVisibility();
         if (light) {
