@@ -1,6 +1,4 @@
 apply plugin: 'com.android.library'
-//apply from: '../maven_push.gradle'
-//apply from: '../config/quality.gradle'
 
 dependencies {
     def appcompat_version = "1.2.0"
@@ -21,10 +19,7 @@ android {
     lintOptions {
         abortOnError false
     }
-//    compileOptions {
-//        sourceCompatibility JavaVersion.VERSION_1_8
-//        targetCompatibility JavaVersion.VERSION_1_8
-//    }
+
     buildTypes {
         debug {
             testCoverageEnabled true

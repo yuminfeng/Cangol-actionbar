@@ -1,7 +1,6 @@
 apply plugin: 'com.android.application'
 apply plugin: 'org.jetbrains.kotlin.android'
 
-
 dependencies {
     implementation project(':actionbar')
 
@@ -11,7 +10,7 @@ dependencies {
 
 android {
 
-    compileSdkVersion Integer.decode("$sdk_version")
+    compileSdk Integer.decode("$sdk_version")
 
     defaultConfig {
         minSdkVersion Integer.decode("$min_version")
