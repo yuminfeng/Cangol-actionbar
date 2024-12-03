@@ -32,14 +32,11 @@ import java.util.List;
 import mobi.cangol.mobile.actionbar.ActionBarActivity;
 import mobi.cangol.mobile.actionbar.ActionMenu;
 import mobi.cangol.mobile.actionbar.ActionMenuItem;
-import mobi.cangol.mobile.actionbar.ActionMode;
-import mobi.cangol.mobile.actionbar.ActionMode.Callback;
 import mobi.cangol.mobile.actionbar.ActionTab;
 import mobi.cangol.mobile.actionbar.ActionTabItem;
 import mobi.cangol.mobile.actionbar.OnNavigationListener;
 import mobi.cangol.mobile.actionbar.R;
 import mobi.cangol.mobile.actionbar.internal.ActionMenuImpl;
-import mobi.cangol.mobile.actionbar.internal.ActionModeImpl;
 import mobi.cangol.mobile.actionbar.internal.ActionTabImpl;
 
 /**
@@ -55,7 +52,6 @@ public class ActionBarView extends RelativeLayout {
     private PopupWindow mPopupMenu;
     private ImageView mRefreshView;
     private ActionMenu mActionMenu;
-    private ActionMode mActionMode;
     private ActionTab mActionTab;
     private FrameLayout mCustomLayout;
     private ActionBarActivity mActionBarActivity;
@@ -107,8 +103,7 @@ public class ActionBarView extends RelativeLayout {
         mCustomLayout = this.findViewById(R.id.actionbar_main_custom_layout);
         mActionTab = new ActionTabImpl(this.findViewById(R.id.actionbar_main_tabview));
         mActionMenu = new ActionMenuImpl(this.findViewById(R.id.actionbar_main_menu));
-        mActionMode = new ActionModeImpl(this.findViewById(R.id.actionbar_main_mode));
-        setTitle(context.getApplicationInfo().name);
+//        setTitle(context.getApplicationInfo().name);
         initListeners();
     }
 
@@ -430,19 +425,6 @@ public class ActionBarView extends RelativeLayout {
         mTitleView.setOnClickListener(listener);
     }
 
-    public ActionMode startActionMode(Callback callback) {
-        if (!mActionMode.isActionMode()) {
-            mActionMode.start(callback);
-        }
-        return mActionMode;
-    }
-
-    public void stopActionMode() {
-        if (mActionMode.isActionMode()) {
-            mActionMode.finish();
-        }
-    }
-
     public ActionMenu getActionMenu() {
         return mActionMenu;
     }
@@ -478,11 +460,6 @@ public class ActionBarView extends RelativeLayout {
     }
 
     public boolean onBackPressed() {
-        if (mActionMode.isActionMode()) {
-            stopActionMode();
-            return true;
-        }
-
         return false;
     }
 

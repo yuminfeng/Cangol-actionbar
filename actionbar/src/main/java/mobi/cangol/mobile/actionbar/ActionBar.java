@@ -16,11 +16,12 @@ public abstract class ActionBar {
      * 设置自定义的home和up
      *
      * @param homeId home资源id
-     * @param upId up资源id
+     * @param upId   up资源id
      */
     public abstract void setCustomHomeAsUpIndicator(int homeId, int upId);
 
     /**
+     *
      */
     public abstract void resetCustomHomeAsUpIndicator();
 
@@ -33,6 +34,7 @@ public abstract class ActionBar {
 
 
     public abstract void hideHomeAsUpIndicator();
+
     /**
      * 显示home指示器
      */
@@ -111,6 +113,7 @@ public abstract class ActionBar {
      * 修改箭头线的宽度 默认7
      */
     public abstract void setArrowDrawableThickness(float width);
+
     /**
      * 获取标题
      *
@@ -138,18 +141,21 @@ public abstract class ActionBar {
      * @param gravity 对其方式
      */
     public abstract void setTitleGravity(int gravity);
+
     /**
      * 设置标题Color
      *
      * @param color 颜色
      */
     public abstract void setTitleColor(int color);
+
     /**
      * 设置标题size
      *
      * @param size 字体大小
      */
     public abstract void setTitleSize(float size);
+
     /**
      * 获取标题对其方式
      *
@@ -166,6 +172,7 @@ public abstract class ActionBar {
 
     /**
      * 获取标题显示
+     *
      * @return 显示状态
      */
     public abstract int getTitleVisibility();
@@ -179,20 +186,8 @@ public abstract class ActionBar {
     public abstract void setOnTitleClickListener(OnClickListener listener);
 
     /**
-     * 启动ActionMode
-     *
-     * @param callback 回调
-     * @return ActionMode
-     */
-    public abstract ActionMode startActionMode(ActionMode.Callback callback);
-
-    /**
-     * 停止ActionMode
-     */
-    public abstract void stopActionMode();
-
-    /**
      * 开启/关闭 刷新
+     *
      * @param enable 是否刷新
      */
     public abstract void enableRefresh(boolean enable);
@@ -200,13 +195,15 @@ public abstract class ActionBar {
 
     /**
      * 开启/关闭 刷新left|right
-     * @param enable 是否刷新
-     * @param gravity  位置
+     *
+     * @param enable  是否刷新
+     * @param gravity 位置
      */
     public abstract void enableRefresh(boolean enable, int gravity);
 
     /**
      * 开始/停止 刷新
+     *
      * @param refresh 是否刷新
      */
     public abstract void refreshing(boolean refresh);
@@ -228,6 +225,7 @@ public abstract class ActionBar {
 
     /**
      * 获取导航菜单
+     *
      * @return 导航菜单list
      */
     public abstract String[] getListNavigation();
@@ -300,6 +298,7 @@ public abstract class ActionBar {
      * 添加自定义view
      * 背景透明，所占空间为[指示器右侧到menu左侧]
      * 此时title会被隐藏，tab会被移除
+     *
      * @param view 自定义view
      */
     public abstract void setCustomView(View view);
@@ -312,7 +311,8 @@ public abstract class ActionBar {
 
     /**
      * 获取view
-     * @param id 资源id
+     *
+     * @param id  资源id
      * @param <T> view
      * @return view
      */

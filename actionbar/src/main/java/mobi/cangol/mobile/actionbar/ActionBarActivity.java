@@ -362,23 +362,6 @@ public class ActionBarActivity extends AppCompatActivity {
     }
 
     /**
-     * 启动自定义actionmode
-     *
-     * @param callback 回调
-     * @return ActionMode
-     */
-    public ActionMode startCustomActionMode(ActionMode.Callback callback) {
-        return getCustomActionBar().startActionMode(callback);
-    }
-
-    /**
-     * 停止自定义actionmode
-     */
-    public void stopCustomActionMode() {
-        getCustomActionBar().stopActionMode();
-    }
-
-    /**
      * 导航回调
      *
      * @return 是否操作

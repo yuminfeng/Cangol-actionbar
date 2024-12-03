@@ -26,9 +26,10 @@ public final class ActionBarImpl extends ActionBar {
     }
 
     @Override
-    public void setArrowDrawableThickness(float width){
+    public void setArrowDrawableThickness(float width) {
         mActionBarView.setArrowDrawableThickness(width);
     }
+
     @Override
     public void setCustomHomeAsUpIndicator(int homeId, int upId) {
         mActionBarView.setCustomHomeAsUpIndicator(homeId, upId);
@@ -71,7 +72,7 @@ public final class ActionBarImpl extends ActionBar {
 
     @Override
     public void setLeftMenu(int id, int text, int icon, OnClickListener listener) {
-        mActionBarView.setLeftMenu(id,text,icon,listener);
+        mActionBarView.setLeftMenu(id, text, icon, listener);
     }
 
     @Override
@@ -154,25 +155,13 @@ public final class ActionBarImpl extends ActionBar {
     }
 
     @Override
-    public ActionMode startActionMode(Callback callback) {
-        return mActionBarView.startActionMode(callback);
-    }
-
-
-    @Override
-    public void stopActionMode() {
-        mActionBarView.stopActionMode();
-
-    }
-
-    @Override
     public void enableRefresh(boolean enable) {
         mActionBarView.enableRefresh(enable);
     }
 
     @Override
     public void enableRefresh(boolean enable, int gravity) {
-        mActionBarView.enableRefresh(enable,gravity);
+        mActionBarView.enableRefresh(enable, gravity);
     }
 
     @Override
