@@ -31,7 +31,6 @@ class MainActivity1 : ActionBarActivity() {
         customActionBar.setDisplayShowHomeEnabled(true)
         customActionBar.setBackgroundResource(R.color.red)
 
-        activities.add(ActionModeActivity1::class.java)
         activities.add(RefreshActivity1::class.java)
         activities.add(TabViewActivity1::class.java)
         activities.add(NavViewActivity1::class.java)
