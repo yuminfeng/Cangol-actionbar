@@ -238,7 +238,8 @@ public final class ActionBarImpl extends ActionBar {
 
     @Override
     public void setCustomView(View view) {
-        mActionBarView.setCustomView(view);
+        if (view != null)
+            mActionBarView.setCustomView(view);
     }
 
     @Override
