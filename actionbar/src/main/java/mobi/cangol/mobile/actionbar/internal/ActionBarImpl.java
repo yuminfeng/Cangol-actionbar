@@ -1,5 +1,6 @@
 package mobi.cangol.mobile.actionbar.internal;
 
+import android.text.TextUtils;
 import android.view.View;
 import android.view.View.OnClickListener;
 
@@ -8,8 +9,6 @@ import java.util.List;
 import mobi.cangol.mobile.actionbar.ActionBar;
 import mobi.cangol.mobile.actionbar.ActionMenu;
 import mobi.cangol.mobile.actionbar.ActionMenuItem;
-import mobi.cangol.mobile.actionbar.ActionMode;
-import mobi.cangol.mobile.actionbar.ActionMode.Callback;
 import mobi.cangol.mobile.actionbar.ActionTab;
 import mobi.cangol.mobile.actionbar.ActionTabItem;
 import mobi.cangol.mobile.actionbar.OnNavigationListener;
@@ -116,6 +115,9 @@ public final class ActionBarImpl extends ActionBar {
 
     @Override
     public void setTitle(CharSequence title) {
+        if (!isShow() && !TextUtils.isEmpty(title)) {
+            setShow(true);
+        }
         mActionBarView.setTitle(title);
     }
 
