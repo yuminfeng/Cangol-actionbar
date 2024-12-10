@@ -110,9 +110,6 @@ public final class ActionBarImpl extends ActionBar {
 
     @Override
     public void setTitle(int resId) {
-        if (!isShow() && resId > 0) {
-            setShow(true);
-        }
         mActionBarView.setTitle(resId);
     }
 
